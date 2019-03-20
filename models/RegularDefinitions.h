@@ -16,7 +16,7 @@ public:
     RegularDefinitions(const unordered_map<string, string> &definitions);
 
 public:
-    unordered_map<string, string> definitions;
+    static unordered_map<string, string> definitions;
 
 };
 

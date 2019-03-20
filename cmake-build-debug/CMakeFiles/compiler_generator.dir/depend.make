@@ -5,6 +5,7 @@ CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: .././models/Keywords.h
 CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: .././models/RegularDefinitions.h
 CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: .././models/RegularExpressions.h
 CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: .././models/TokenStateNode.h
+CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: .././utils/StringUtils.h
 CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: ../NFABuilder.cpp
 CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj: ../NFABuilder.h
 
@@ -13,6 +14,7 @@ CMakeFiles/compiler_generator.dir/main.cpp.obj: .././models/Punctuations.h
 CMakeFiles/compiler_generator.dir/main.cpp.obj: .././models/RegularDefinitions.h
 CMakeFiles/compiler_generator.dir/main.cpp.obj: .././models/RegularExpressions.h
 CMakeFiles/compiler_generator.dir/main.cpp.obj: .././models/RulesParser.h
+CMakeFiles/compiler_generator.dir/main.cpp.obj: .././utils/StringUtils.h
 CMakeFiles/compiler_generator.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/compiler_generator.dir/models/ArithmeticOperators.cpp.obj: ../models/ArithmeticOperators.cpp
@@ -27,12 +29,14 @@ CMakeFiles/compiler_generator.dir/models/Punctuations.cpp.obj: ../models/Punctua
 CMakeFiles/compiler_generator.dir/models/RegularDefinitions.cpp.obj: ../models/RegularDefinitions.cpp
 CMakeFiles/compiler_generator.dir/models/RegularDefinitions.cpp.obj: ../models/RegularDefinitions.h
 
+CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.obj: .././utils/StringUtils.h
 CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.obj: ../models/RegularExpressions.cpp
 CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.obj: ../models/RegularExpressions.h
 
 CMakeFiles/compiler_generator.dir/models/RelationalOperators.cpp.obj: ../models/RelationalOperators.cpp
 CMakeFiles/compiler_generator.dir/models/RelationalOperators.cpp.obj: ../models/RelationalOperators.h
 
+CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj: .././utils/StringUtils.h
 CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj: ../models/Keywords.h
 CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj: ../models/Punctuations.h
 CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj: ../models/RegularDefinitions.h
@@ -43,4 +47,7 @@ CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj: ../models/Types.h
 
 CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.obj: ../models/TokenStateNode.cpp
 CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.obj: ../models/TokenStateNode.h
+
+CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.obj: ../utils/StringUtils.cpp
+CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.obj: ../utils/StringUtils.h
 

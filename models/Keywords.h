@@ -12,7 +12,7 @@ using namespace std;
 class Keywords {
 
 public:
-    unordered_set<string> keywords;
+    static unordered_set<string> keywords;
     unordered_set<string> conditionalKeywords;
     unordered_set<string> dataTypes;
 };

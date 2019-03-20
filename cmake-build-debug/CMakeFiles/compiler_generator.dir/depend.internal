@@ -6,6 +6,7 @@ CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj
  .././models/RegularDefinitions.h
  .././models/RegularExpressions.h
  .././models/TokenStateNode.h
+ .././utils/StringUtils.h
  C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.cpp
  C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
 CMakeFiles/compiler_generator.dir/main.cpp.obj
@@ -14,6 +15,7 @@ CMakeFiles/compiler_generator.dir/main.cpp.obj
  .././models/RegularDefinitions.h
  .././models/RegularExpressions.h
  .././models/RulesParser.h
+ .././utils/StringUtils.h
  C:/Users/Ahmed/Desktop/compiler_generator/main.cpp
 CMakeFiles/compiler_generator.dir/models/ArithmeticOperators.cpp.obj
  C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.cpp
@@ -28,12 +30,14 @@ CMakeFiles/compiler_generator.dir/models/RegularDefinitions.cpp.obj
  C:/Users/Ahmed/Desktop/compiler_generator/models/RegularDefinitions.cpp
  C:/Users/Ahmed/Desktop/compiler_generator/models/RegularDefinitions.h
 CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.obj
+ .././utils/StringUtils.h
  C:/Users/Ahmed/Desktop/compiler_generator/models/RegularExpressions.cpp
  C:/Users/Ahmed/Desktop/compiler_generator/models/RegularExpressions.h
 CMakeFiles/compiler_generator.dir/models/RelationalOperators.cpp.obj
  C:/Users/Ahmed/Desktop/compiler_generator/models/RelationalOperators.cpp
  C:/Users/Ahmed/Desktop/compiler_generator/models/RelationalOperators.h
 CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj
+ .././utils/StringUtils.h
  C:/Users/Ahmed/Desktop/compiler_generator/models/Keywords.h
  C:/Users/Ahmed/Desktop/compiler_generator/models/Punctuations.h
  C:/Users/Ahmed/Desktop/compiler_generator/models/RegularDefinitions.h
@@ -44,3 +48,6 @@ CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj
 CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.obj
  C:/Users/Ahmed/Desktop/compiler_generator/models/TokenStateNode.cpp
  C:/Users/Ahmed/Desktop/compiler_generator/models/TokenStateNode.h
+CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.obj
+ C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.cpp
+ C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.h

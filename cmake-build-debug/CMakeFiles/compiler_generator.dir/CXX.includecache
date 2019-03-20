@@ -17,9 +17,15 @@ unordered_set
 .././models/RegularDefinitions.h
 unordered_map
 -
+vector
+-
 
 .././models/RegularExpressions.h
 unordered_map
+-
+vector
+-
+utils/StringUtils.h
 -
 
 .././models/RulesParser.h
@@ -40,6 +46,16 @@ RegularDefinitions.h
 
 .././models/TokenStateNode.h
 unordered_map
+-
+
+.././utils/StringUtils.h
+string
+-
+unordered_map
+-
+vector
+-
+sstream
 -
 
 C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.cpp
@@ -95,6 +111,8 @@ C:/Users/Ahmed/Desktop/compiler_generator/models/RegularDefinitions.h
 C:/Users/Ahmed/Desktop/compiler_generator/models/RegularDefinitions.h
 unordered_map
 -
+vector
+-
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/RegularExpressions.cpp
 RegularExpressions.h
@@ -102,6 +120,10 @@ C:/Users/Ahmed/Desktop/compiler_generator/models/RegularExpressions.h
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/RegularExpressions.h
 unordered_map
+-
+vector
+-
+utils/StringUtils.h
 -
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/RelationalOperators.cpp
@@ -147,4 +169,18 @@ unordered_map
 -
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/Types.h
+
+C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.cpp
+StringUtils.h
+C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.h
+
+C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.h
+string
+-
+unordered_map
+-
+vector
+-
+sstream
+-
 

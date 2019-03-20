@@ -18,9 +18,9 @@ public:
     RulesParser(string input);
     Punctuations punc;
     Keywords keywords;
-    RegularExpressions regexpression;
-    RegularDefinitions regdefenition;
     vector<string> lines;
+    unordered_map<string, string> def;
+    unordered_map<string, string> exp;
     void init();
 
 private:
@@ -35,11 +35,8 @@ private:
     void getArgfromPN(string line);
     void getArgfromKW(string line);
     vector<string> splitString (string line,char delimiter);
-
-
-
-
-
+   // RegularDefinitions regDef(const unordered_map<string, string> &definitions);
+    //RegularExpressions regExp (const unordered_map<string, string> &expressions);
 
 };
 

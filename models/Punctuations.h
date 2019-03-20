@@ -12,7 +12,7 @@ using namespace std;
 class Punctuations {
 
 public:
-    unordered_set<char> punctuations;
+    unordered_set<string> punctuations;
 };
 
 

@@ -7,9 +7,12 @@
 #include "RulesParser.h"
 #include "Types.h"
 RulesParser::RulesParser(string input) {rulesFile=input;}
+
 void RulesParser::init() {
     readFile();
     fillData();
+   // RulesParser::regDef(def);
+    //RulesParser::regExp(exp);
 }
 void RulesParser::readFile() {
     streamfile.open(rulesFile);
@@ -74,34 +77,53 @@ void RulesParser::insertData(string line, int Type) {
 
 }
 void RulesParser::getArgfromKW(string line) {
-/*
 if(line[0]!='{'){
     int pos = line.find_first_of('{');
     line=line.erase(pos,pos+1);
-
 }
 if(line[line.size()-1]!='}'){
     int pos = line.find_last_of('}');
     line=line.erase(pos-1,line.size()-1);
 }
-*/
-
+    line.erase(0,1);
+    line.erase(line.size()-1,line.size());
+vector<string> tmp = splitString(line,' ');
+for(int i=0;i<tmp.size();i++) {
+    if(tmp[i].size()>0&&tmp[i]!="") {
+        keywords.keywords.insert(tmp[i]);
+    }
+}
 }
 void RulesParser::getArgfromPN(string line) {
-
+    if(line[0]!='['){
+        int pos = line.find_first_of('[');
+        line=line.erase(pos,pos+1);
+    }
+    if(line[line.size()-1]!=']'){
+        int pos = line.find_last_of(']');
+        line=line.erase(pos-1,line.size()-1);
+    }
+    line.erase(0,1);
+    line.erase(line.size()-1,line.size());
+    vector<string> tmp = splitString(line,' ');
+    for(int i=0;i<tmp.size();i++) {
+        if(tmp[i].size()>0&&tmp[i]!="") {
+            punc.punctuations.insert(tmp[i]);
+        }
+    }
 }
 void RulesParser::getArgfromRD(string line) {
     line=regex_replace(line,regex("\\s"), "");
     vector<string> result =splitString(line,'=');
     if (result.size()==2){
-        RegularDefinitions::definitions.insert(result[0],result[1]);
+        def.insert(result[0],result[1]);
     }
 }
 void RulesParser::getArgfromRE(string line) {
     line=regex_replace(line,regex("\\s"), "");
     vector<string> result =splitString(line,':');
     if (result.size()==2){
-        RegularDefinitions::definitions.insert(result[0],result[1]);
+        exp.insert(result[0],result[1]);
     }
 }
 vector<string> RulesParser::splitString(string line,char delimiter) {
@@ -113,3 +135,4 @@ vector<string> RulesParser::splitString(string line,char delimiter) {
     }
     return temp;
 }
+
