@@ -12,7 +12,7 @@ using namespace std;
 class RegularDefinitions {
 
 public:
-    unordered_map<string, string> definitions;
+    static unordered_map<string, string> definitions;
 };
 
 

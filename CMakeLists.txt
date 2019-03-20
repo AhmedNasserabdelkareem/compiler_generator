@@ -1,25 +1,26 @@
-cmake_minimum_required(VERSION 3.13)
-project(Lexical_Analyzer)
+cmake_minimum_required(VERSION 3.10)
+project(compiler_generator)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 include_directories(.)
+include_directories(models)
 
-add_executable(Lexical_Analyzer
-        main.cpp
-        models/RegularDefinitions.cpp
-        models/RegularDefinitions.h
-        models/RegularExpressions.cpp
-        models/RegularExpressions.h
+add_executable(compiler_generator
+        models/ArithmeticOperators.cpp
+        models/ArithmeticOperators.h
         models/Keywords.cpp
         models/Keywords.h
         models/Punctuations.cpp
         models/Punctuations.h
+        models/RegularDefinitions.cpp
+        models/RegularDefinitions.h
+        models/RegularExpressions.cpp
+        models/RegularExpressions.h
         models/RelationalOperators.cpp
         models/RelationalOperators.h
-        models/ArithmeticOperators.cpp
-        models/ArithmeticOperators.h
         models/TokenStateNode.cpp
         models/TokenStateNode.h
+        main.cpp
         NFABuilder.cpp
-        NFABuilder.h)
+        NFABuilder.h models/RulesParser.cpp models/RulesParser.h models/Types.h)

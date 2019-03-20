@@ -1,6 +1,14 @@
 #include <iostream>
+#include <models/RulesParser.h>
+#include <regex>
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+string rules = "../input/rules.txt";
+string test = "../input/test.txt";
+   RulesParser parser (rules);
+    parser.init();
+
     return 0;
 }
