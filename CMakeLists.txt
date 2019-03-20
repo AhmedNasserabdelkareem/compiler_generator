@@ -22,4 +22,4 @@ add_executable(Lexical_Analyzer
         models/TokenStateNode.cpp
         models/TokenStateNode.h
         NFABuilder.cpp
-        NFABuilder.h)
+        NFABuilder.h utils/StringUtils.cpp utils/StringUtils.h)
