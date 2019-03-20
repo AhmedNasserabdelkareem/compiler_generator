@@ -146,6 +146,12 @@
 		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/Types.h">
 			<Option target="compiler_generator"/>
 		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.cpp">
+			<Option target="compiler_generator"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/utils/StringUtils.h">
+			<Option target="compiler_generator"/>
+		</Unit>
 		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

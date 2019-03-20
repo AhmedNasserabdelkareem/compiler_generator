@@ -392,6 +392,33 @@ models/TokenStateNode.cpp.s:
 	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.s
 .PHONY : models/TokenStateNode.cpp.s
 
+utils/StringUtils.obj: utils/StringUtils.cpp.obj
+
+.PHONY : utils/StringUtils.obj
+
+# target to build an object file
+utils/StringUtils.cpp.obj:
+	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.obj
+.PHONY : utils/StringUtils.cpp.obj
+
+utils/StringUtils.i: utils/StringUtils.cpp.i
+
+.PHONY : utils/StringUtils.i
+
+# target to preprocess a source file
+utils/StringUtils.cpp.i:
+	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.i
+.PHONY : utils/StringUtils.cpp.i
+
+utils/StringUtils.s: utils/StringUtils.cpp.s
+
+.PHONY : utils/StringUtils.s
+
+# target to generate assembly for a file
+utils/StringUtils.cpp.s:
+	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.s
+.PHONY : utils/StringUtils.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -431,6 +458,9 @@ help:
 	@echo ... models/TokenStateNode.obj
 	@echo ... models/TokenStateNode.i
 	@echo ... models/TokenStateNode.s
+	@echo ... utils/StringUtils.obj
+	@echo ... utils/StringUtils.i
+	@echo ... utils/StringUtils.s
 .PHONY : help
 
 

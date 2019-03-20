@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/compiler_generator.dir/main.cpp.obj"
   "CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj"
   "CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj"
+  "CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.obj"
   "compiler_generator.pdb"
   "compiler_generator.exe"
   "compiler_generator.exe.manifest"

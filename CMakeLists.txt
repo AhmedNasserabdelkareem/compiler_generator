@@ -23,4 +23,5 @@ add_executable(compiler_generator
         models/TokenStateNode.h
         main.cpp
         NFABuilder.cpp
-        NFABuilder.h models/RulesParser.cpp models/RulesParser.h models/Types.h)
+        NFABuilder.h models/RulesParser.cpp models/RulesParser.h models/Types.h
+        NFABuilder.h utils/StringUtils.cpp utils/StringUtils.h)
