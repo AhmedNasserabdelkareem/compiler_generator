@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Ahmed\Desktop\compiler_generator
+CMAKE_SOURCE_DIR = C:\Users\Ahmed\Downloads\Compressed\compiler_generator-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Ahmed\Downloads\Compressed\compiler_generator-master\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ahmed\Downloads\Compressed\compiler_generator-master\cmake-build-debug\CMakeFiles C:\Users\Ahmed\Downloads\Compressed\compiler_generator-master\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ahmed\Downloads\Compressed\compiler_generator-master\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named compiler_generator
+# Target rules for targets named compiler_generator_master
 
 # Build rule for target.
-compiler_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 compiler_generator
-.PHONY : compiler_generator
+compiler_generator_master: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 compiler_generator_master
+.PHONY : compiler_generator_master
 
 # fast build rule for target.
-compiler_generator/fast:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/build
-.PHONY : compiler_generator/fast
+compiler_generator_master/fast:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/build
+.PHONY : compiler_generator_master/fast
 
 NFABuilder.obj: NFABuilder.cpp.obj
 
@@ -128,7 +128,7 @@ NFABuilder.obj: NFABuilder.cpp.obj
 
 # target to build an object file
 NFABuilder.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/NFABuilder.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.obj
 .PHONY : NFABuilder.cpp.obj
 
 NFABuilder.i: NFABuilder.cpp.i
@@ -137,7 +137,7 @@ NFABuilder.i: NFABuilder.cpp.i
 
 # target to preprocess a source file
 NFABuilder.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/NFABuilder.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.i
 .PHONY : NFABuilder.cpp.i
 
 NFABuilder.s: NFABuilder.cpp.s
@@ -146,7 +146,7 @@ NFABuilder.s: NFABuilder.cpp.s
 
 # target to generate assembly for a file
 NFABuilder.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/NFABuilder.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.s
 .PHONY : NFABuilder.cpp.s
 
 main.obj: main.cpp.obj
@@ -155,7 +155,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -164,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -173,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 models/ArithmeticOperators.obj: models/ArithmeticOperators.cpp.obj
@@ -182,7 +182,7 @@ models/ArithmeticOperators.obj: models/ArithmeticOperators.cpp.obj
 
 # target to build an object file
 models/ArithmeticOperators.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/ArithmeticOperators.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.obj
 .PHONY : models/ArithmeticOperators.cpp.obj
 
 models/ArithmeticOperators.i: models/ArithmeticOperators.cpp.i
@@ -191,7 +191,7 @@ models/ArithmeticOperators.i: models/ArithmeticOperators.cpp.i
 
 # target to preprocess a source file
 models/ArithmeticOperators.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/ArithmeticOperators.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.i
 .PHONY : models/ArithmeticOperators.cpp.i
 
 models/ArithmeticOperators.s: models/ArithmeticOperators.cpp.s
@@ -200,7 +200,7 @@ models/ArithmeticOperators.s: models/ArithmeticOperators.cpp.s
 
 # target to generate assembly for a file
 models/ArithmeticOperators.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/ArithmeticOperators.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.s
 .PHONY : models/ArithmeticOperators.cpp.s
 
 models/Keywords.obj: models/Keywords.cpp.obj
@@ -209,7 +209,7 @@ models/Keywords.obj: models/Keywords.cpp.obj
 
 # target to build an object file
 models/Keywords.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/Keywords.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/Keywords.cpp.obj
 .PHONY : models/Keywords.cpp.obj
 
 models/Keywords.i: models/Keywords.cpp.i
@@ -218,7 +218,7 @@ models/Keywords.i: models/Keywords.cpp.i
 
 # target to preprocess a source file
 models/Keywords.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/Keywords.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/Keywords.cpp.i
 .PHONY : models/Keywords.cpp.i
 
 models/Keywords.s: models/Keywords.cpp.s
@@ -227,7 +227,7 @@ models/Keywords.s: models/Keywords.cpp.s
 
 # target to generate assembly for a file
 models/Keywords.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/Keywords.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/Keywords.cpp.s
 .PHONY : models/Keywords.cpp.s
 
 models/Punctuations.obj: models/Punctuations.cpp.obj
@@ -236,7 +236,7 @@ models/Punctuations.obj: models/Punctuations.cpp.obj
 
 # target to build an object file
 models/Punctuations.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/Punctuations.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/Punctuations.cpp.obj
 .PHONY : models/Punctuations.cpp.obj
 
 models/Punctuations.i: models/Punctuations.cpp.i
@@ -245,7 +245,7 @@ models/Punctuations.i: models/Punctuations.cpp.i
 
 # target to preprocess a source file
 models/Punctuations.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/Punctuations.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/Punctuations.cpp.i
 .PHONY : models/Punctuations.cpp.i
 
 models/Punctuations.s: models/Punctuations.cpp.s
@@ -254,7 +254,7 @@ models/Punctuations.s: models/Punctuations.cpp.s
 
 # target to generate assembly for a file
 models/Punctuations.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/Punctuations.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/Punctuations.cpp.s
 .PHONY : models/Punctuations.cpp.s
 
 models/RegularDefinitions.obj: models/RegularDefinitions.cpp.obj
@@ -263,7 +263,7 @@ models/RegularDefinitions.obj: models/RegularDefinitions.cpp.obj
 
 # target to build an object file
 models/RegularDefinitions.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RegularDefinitions.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RegularDefinitions.cpp.obj
 .PHONY : models/RegularDefinitions.cpp.obj
 
 models/RegularDefinitions.i: models/RegularDefinitions.cpp.i
@@ -272,7 +272,7 @@ models/RegularDefinitions.i: models/RegularDefinitions.cpp.i
 
 # target to preprocess a source file
 models/RegularDefinitions.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RegularDefinitions.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RegularDefinitions.cpp.i
 .PHONY : models/RegularDefinitions.cpp.i
 
 models/RegularDefinitions.s: models/RegularDefinitions.cpp.s
@@ -281,7 +281,7 @@ models/RegularDefinitions.s: models/RegularDefinitions.cpp.s
 
 # target to generate assembly for a file
 models/RegularDefinitions.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RegularDefinitions.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RegularDefinitions.cpp.s
 .PHONY : models/RegularDefinitions.cpp.s
 
 models/RegularExpressions.obj: models/RegularExpressions.cpp.obj
@@ -290,7 +290,7 @@ models/RegularExpressions.obj: models/RegularExpressions.cpp.obj
 
 # target to build an object file
 models/RegularExpressions.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RegularExpressions.cpp.obj
 .PHONY : models/RegularExpressions.cpp.obj
 
 models/RegularExpressions.i: models/RegularExpressions.cpp.i
@@ -299,7 +299,7 @@ models/RegularExpressions.i: models/RegularExpressions.cpp.i
 
 # target to preprocess a source file
 models/RegularExpressions.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RegularExpressions.cpp.i
 .PHONY : models/RegularExpressions.cpp.i
 
 models/RegularExpressions.s: models/RegularExpressions.cpp.s
@@ -308,7 +308,7 @@ models/RegularExpressions.s: models/RegularExpressions.cpp.s
 
 # target to generate assembly for a file
 models/RegularExpressions.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RegularExpressions.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RegularExpressions.cpp.s
 .PHONY : models/RegularExpressions.cpp.s
 
 models/RelationalOperators.obj: models/RelationalOperators.cpp.obj
@@ -317,7 +317,7 @@ models/RelationalOperators.obj: models/RelationalOperators.cpp.obj
 
 # target to build an object file
 models/RelationalOperators.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RelationalOperators.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RelationalOperators.cpp.obj
 .PHONY : models/RelationalOperators.cpp.obj
 
 models/RelationalOperators.i: models/RelationalOperators.cpp.i
@@ -326,7 +326,7 @@ models/RelationalOperators.i: models/RelationalOperators.cpp.i
 
 # target to preprocess a source file
 models/RelationalOperators.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RelationalOperators.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RelationalOperators.cpp.i
 .PHONY : models/RelationalOperators.cpp.i
 
 models/RelationalOperators.s: models/RelationalOperators.cpp.s
@@ -335,7 +335,7 @@ models/RelationalOperators.s: models/RelationalOperators.cpp.s
 
 # target to generate assembly for a file
 models/RelationalOperators.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RelationalOperators.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RelationalOperators.cpp.s
 .PHONY : models/RelationalOperators.cpp.s
 
 models/RulesParser.obj: models/RulesParser.cpp.obj
@@ -344,7 +344,7 @@ models/RulesParser.obj: models/RulesParser.cpp.obj
 
 # target to build an object file
 models/RulesParser.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RulesParser.cpp.obj
 .PHONY : models/RulesParser.cpp.obj
 
 models/RulesParser.i: models/RulesParser.cpp.i
@@ -353,7 +353,7 @@ models/RulesParser.i: models/RulesParser.cpp.i
 
 # target to preprocess a source file
 models/RulesParser.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RulesParser.cpp.i
 .PHONY : models/RulesParser.cpp.i
 
 models/RulesParser.s: models/RulesParser.cpp.s
@@ -362,7 +362,7 @@ models/RulesParser.s: models/RulesParser.cpp.s
 
 # target to generate assembly for a file
 models/RulesParser.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/RulesParser.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/RulesParser.cpp.s
 .PHONY : models/RulesParser.cpp.s
 
 models/TokenStateNode.obj: models/TokenStateNode.cpp.obj
@@ -371,7 +371,7 @@ models/TokenStateNode.obj: models/TokenStateNode.cpp.obj
 
 # target to build an object file
 models/TokenStateNode.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/TokenStateNode.cpp.obj
 .PHONY : models/TokenStateNode.cpp.obj
 
 models/TokenStateNode.i: models/TokenStateNode.cpp.i
@@ -380,7 +380,7 @@ models/TokenStateNode.i: models/TokenStateNode.cpp.i
 
 # target to preprocess a source file
 models/TokenStateNode.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/TokenStateNode.cpp.i
 .PHONY : models/TokenStateNode.cpp.i
 
 models/TokenStateNode.s: models/TokenStateNode.cpp.s
@@ -389,7 +389,7 @@ models/TokenStateNode.s: models/TokenStateNode.cpp.s
 
 # target to generate assembly for a file
 models/TokenStateNode.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/models/TokenStateNode.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/TokenStateNode.cpp.s
 .PHONY : models/TokenStateNode.cpp.s
 
 utils/StringUtils.obj: utils/StringUtils.cpp.obj
@@ -398,7 +398,7 @@ utils/StringUtils.obj: utils/StringUtils.cpp.obj
 
 # target to build an object file
 utils/StringUtils.cpp.obj:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.obj
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/utils/StringUtils.cpp.obj
 .PHONY : utils/StringUtils.cpp.obj
 
 utils/StringUtils.i: utils/StringUtils.cpp.i
@@ -407,7 +407,7 @@ utils/StringUtils.i: utils/StringUtils.cpp.i
 
 # target to preprocess a source file
 utils/StringUtils.cpp.i:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.i
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/utils/StringUtils.cpp.i
 .PHONY : utils/StringUtils.cpp.i
 
 utils/StringUtils.s: utils/StringUtils.cpp.s
@@ -416,7 +416,7 @@ utils/StringUtils.s: utils/StringUtils.cpp.s
 
 # target to generate assembly for a file
 utils/StringUtils.cpp.s:
-	$(MAKE) -f CMakeFiles\compiler_generator.dir\build.make CMakeFiles/compiler_generator.dir/utils/StringUtils.cpp.s
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/utils/StringUtils.cpp.s
 .PHONY : utils/StringUtils.cpp.s
 
 # Help Target
@@ -425,7 +425,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... compiler_generator
+	@echo ... compiler_generator_master
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... NFABuilder.obj

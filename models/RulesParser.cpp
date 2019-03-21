@@ -11,8 +11,10 @@ RulesParser::RulesParser(string input) {rulesFile=input;}
 void RulesParser::init() {
     readFile();
     fillData();
-   // RulesParser::regDef(def);
-    //RulesParser::regExp(exp);
+    RegularExpressions *regExp = new RegularExpressions (exp);
+    RegularDefinitions *regDef = new RegularDefinitions (def);
+    Keywords *keys = new Keywords (keywrds);
+    Punctuations *pun = new Punctuations(punc);
 }
 void RulesParser::readFile() {
     streamfile.open(rulesFile);
@@ -90,7 +92,8 @@ if(line[line.size()-1]!='}'){
 vector<string> tmp = splitString(line,' ');
 for(int i=0;i<tmp.size();i++) {
     if(tmp[i].size()>0&&tmp[i]!="") {
-        keywords.keywords.insert(tmp[i]);
+        string temp = StringUtils::replace(tmp[i],'\\');
+        keywrds.insert(tmp[i]);
     }
 }
 }
@@ -108,7 +111,8 @@ void RulesParser::getArgfromPN(string line) {
     vector<string> tmp = splitString(line,' ');
     for(int i=0;i<tmp.size();i++) {
         if(tmp[i].size()>0&&tmp[i]!="") {
-            punc.punctuations.insert(tmp[i]);
+            string temp = StringUtils::replace(tmp[i],'\\');
+         punc.insert(temp);
         }
     }
 }
@@ -116,14 +120,18 @@ void RulesParser::getArgfromRD(string line) {
     line=regex_replace(line,regex("\\s"), "");
     vector<string> result =splitString(line,'=');
     if (result.size()==2){
-        def.insert(result[0],result[1]);
+        string temp = StringUtils::replace(result[0],'\\');
+        string temp2 = StringUtils::replace(result[1],'\\');
+        def.insert(pair<string,string>(temp,temp2));
     }
 }
 void RulesParser::getArgfromRE(string line) {
     line=regex_replace(line,regex("\\s"), "");
     vector<string> result =splitString(line,':');
     if (result.size()==2){
-        exp.insert(result[0],result[1]);
+        string temp = StringUtils::replace(result[0],'\\');
+        string temp2 = StringUtils::replace(result[1],'\\');
+       exp.insert(pair<string,string>(temp,temp2));
     }
 }
 vector<string> RulesParser::splitString(string line,char delimiter) {

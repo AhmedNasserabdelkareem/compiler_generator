@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\compiler_generator.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\compiler_generator.dir/objects.a @CMakeFiles\compiler_generator.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\compiler_generator.dir/objects.a -Wl,--no-whole-archive  -o compiler_generator.exe -Wl,--out-implib,libcompiler_generator.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\compiler_generator.dir\linklibs.rsp

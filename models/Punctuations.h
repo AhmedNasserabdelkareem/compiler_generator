@@ -13,6 +13,8 @@ class Punctuations {
 
 public:
     unordered_set<string> punctuations;
+
+    Punctuations(const unordered_set<string> &punctuations);
 };
 
 

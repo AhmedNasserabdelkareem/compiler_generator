@@ -16,11 +16,12 @@
 class RulesParser {
 public:
     RulesParser(string input);
-    Punctuations punc;
-    Keywords keywords;
     vector<string> lines;
     unordered_map<string, string> def;
     unordered_map<string, string> exp;
+    unordered_set<string> punc;
+    unordered_set<string> keywrds;
+
     void init();
 
 private:
@@ -35,8 +36,6 @@ private:
     void getArgfromPN(string line);
     void getArgfromKW(string line);
     vector<string> splitString (string line,char delimiter);
-   // RegularDefinitions regDef(const unordered_map<string, string> &definitions);
-    //RegularExpressions regExp (const unordered_map<string, string> &expressions);
 
 };
 

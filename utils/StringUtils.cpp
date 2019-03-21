@@ -2,6 +2,7 @@
 // Created by Bassam on 3/20/2019.
 //
 
+#include <regex>
 #include "StringUtils.h"
 
 vector<string> StringUtils::split(const string &string, char delimiter) {
@@ -26,4 +27,15 @@ std::string &StringUtils::ltrim(std::string &str, const std::string &chars) {
 std::string &StringUtils::rtrim(std::string &str, const std::string &chars) {
     str.erase(str.find_last_not_of(chars) + 1);
     return str;
+}
+
+string StringUtils::replace(string str, char delimiter) {
+    string temp=str;
+    for(int i = 0; i < temp.length(); i++)
+    {
+        if(temp[i] == delimiter)
+            temp[i] = ' ';
+    }
+   temp = regex_replace(temp,regex("\\s"), "");
+    return temp;
 }

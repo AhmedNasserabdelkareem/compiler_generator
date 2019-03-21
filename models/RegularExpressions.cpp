@@ -2,9 +2,14 @@
 // Created by Bassam on 3/19/2019.
 //
 
+#include <iostream>
 #include "RegularExpressions.h"
 
 RegularExpressions::RegularExpressions(const unordered_map<string, string> &expressions) : expressions(expressions) {
+/*    cout<<"EXP"<<expressions.size()<<endl;
+    for (auto& it: expressions) {
+        cout << it.first<<" : "<<it.second<<" "<<endl;
+    }*/
     constructExpressionsRanges();
 }
 
