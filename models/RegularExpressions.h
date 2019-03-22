@@ -17,6 +17,7 @@ public:
     unordered_map<string, string> expressions;
     unordered_map<string, vector<char>> expressionsRanges;
 
+    static const char LAMBDA = 0;
 public:
     RegularExpressions(const unordered_map<string, string> &expressions);
 
@@ -26,7 +27,7 @@ public:
 
 
 private:
-    const char OR_OPERATOR = '|', RANGE_OPERATOR = '-', LAMBDA = 0;
+    const char OR_OPERATOR = '|', RANGE_OPERATOR = '-';
 
     void constructExpressionsRanges();
 

@@ -58,7 +58,7 @@ void NFABuilder::buildNFATree() {
         stateTable.statesDequeue.back()->isAccepting = true;
         stateTable.statesDequeue.back()->stateName = definition.first;
 
-        initialNode.addNextState(TokenStateNode::LAMBDA, stateTable.statesDequeue.front());
+        initialNode.addNextState(RegularExpressions::LAMBDA, stateTable.statesDequeue.front());
     }
 
 }

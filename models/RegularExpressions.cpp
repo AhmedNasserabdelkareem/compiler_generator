@@ -7,10 +7,6 @@
 #include "RegularDefinitions.h"
 
 RegularExpressions::RegularExpressions(const unordered_map<string, string> &expressions) : expressions(expressions) {
-/*    cout<<"EXP"<<expressions.size()<<endl;
-    for (auto& it: expressions) {
-        cout << it.first<<" : "<<it.second<<" "<<endl;
-    }*/
     constructExpressionsRanges();
 
     addExpression(make_pair(RegularDefinitions::LAMBDA, string(1, LAMBDA)));

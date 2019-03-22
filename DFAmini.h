@@ -6,7 +6,7 @@
 #define PROJECT_DFAMINI_H
 
 #include <vector>
-#include <models/TokenStateNode.h>
+#include "models/TokenStateNode.h"
 
 using namespace std;
 
@@ -25,7 +25,7 @@ public:
 private:
     vector<vector<TokenStateNode> > states;
 
-    vector<vector<TokenStateNode> > getZeroEquivalent(vector<vector<TokenStateNode> > dfa);
+    void getZeroEquivalent(vector<vector<TokenStateNode> > dfa);
 
     bool isEquivalentStates(vector<vector<TokenStateNode> > dfa, int stateA, int stateB);
 

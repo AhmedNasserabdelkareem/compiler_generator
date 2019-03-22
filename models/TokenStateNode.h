@@ -27,7 +27,7 @@ public:
     vector<TokenStateNode *> getStatesForCharacter(char character);
 
 public:
-    const string INVALID_STATE = "invalid_state";
+    string INVALID_STATE = "invalid_state";
     static const bool DEFAULT_ACCEPTING = false;
     static const int DEFAULT_ID = -1;
 

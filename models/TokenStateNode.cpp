@@ -4,7 +4,7 @@
 
 #include "TokenStateNode.h"
 
-int TokenStateNode::staticID;
+int TokenStateNode::staticID = 0;
 
 TokenStateNode::TokenStateNode() : id(DEFAULT_ID) {}
 
@@ -12,7 +12,7 @@ TokenStateNode::TokenStateNode(int id) : id(id) {}
 
 void TokenStateNode::addNextState(char character, TokenStateNode *state) {
 
-    if (nextStates.find(character) != nextStates.end()) {
+    if (nextStates.find(character) == nextStates.end()) {
         nextStates[character] = vector<TokenStateNode *>();
     };
     nextStates[character].push_back(state);

@@ -18,7 +18,7 @@ int main() {
     return 0;
 }
 
-void sharafTeast(){
+void sharafTest(){
     TokenStateNode a = TokenStateNode("A", false);
     TokenStateNode b = TokenStateNode("B", false);
     TokenStateNode c = TokenStateNode("C", true);
