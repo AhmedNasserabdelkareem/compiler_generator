@@ -8,6 +8,7 @@
 
 vector<vector<TokenStateNode> > DFAmini::getMinimizedDFA(vector<vector<TokenStateNode> > dfa) {
 
+    getZeroEquivalent(dfa);
     vector<vector<TokenStateNode> > newStates = states;
     bool stateAdded;
 
@@ -44,7 +45,7 @@ vector<vector<TokenStateNode> > DFAmini::getMinimizedDFA(vector<vector<TokenStat
     return renameStates(dfa);
 }
 
-vector<vector<TokenStateNode> > DFAmini::getZeroEquivalent(vector<vector<TokenStateNode> > dfa) {
+void DFAmini::getZeroEquivalent(vector<vector<TokenStateNode> > dfa) {
 
     for (int i = 0; i < dfa.size(); ++i) {
         if (!dfa[i][0].isAccepting)
