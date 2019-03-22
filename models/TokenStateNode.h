@@ -16,6 +16,10 @@ public:
 
     explicit TokenStateNode(int id);
 
+    TokenStateNode(string name, bool accept): id(staticID++), stateName(name), isAccepting(accept){
+
+    }
+
     void addNextState(char character, TokenStateNode *state);
 
     void removeStatesForCharacter(char character);
@@ -34,6 +38,7 @@ public:
 
 private:
     unordered_map<char, vector<TokenStateNode *>> nextStates;
+    static int staticID;
 };
 
 

@@ -29,6 +29,8 @@ add_executable(compiler_generator_master
         models/Types.h
         utils/StringUtils.cpp
         utils/StringUtils.h
+        DFAmini.cpp
+        DFAmini.h
         main.cpp
         NFABuilder.cpp
         NFABuilder.h models/FiniteStateTable.cpp models/FiniteStateTable.h)

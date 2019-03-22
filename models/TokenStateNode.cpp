@@ -4,6 +4,8 @@
 
 #include "TokenStateNode.h"
 
+int TokenStateNode::staticID;
+
 TokenStateNode::TokenStateNode() : id(DEFAULT_ID) {}
 
 TokenStateNode::TokenStateNode(int id) : id(id) {}
