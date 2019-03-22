@@ -4,6 +4,24 @@
 
 #include "TokenStateNode.h"
 
-bool TokenStateNode::isLambda(char character) {
-    return character == LAMBDA;
+TokenStateNode::TokenStateNode() : id(DEFAULT_ID) {}
+
+TokenStateNode::TokenStateNode(int id) : id(id) {}
+
+void TokenStateNode::addNextState(char character, TokenStateNode *state) {
+
+    if (nextStates.find(character) != nextStates.end()) {
+        nextStates[character] = vector<TokenStateNode *>();
+    }
+    nextStates[character].push_back(state);
 }
+
+void TokenStateNode::removeStatesForCharacter(char character) {
+    nextStates.erase(character);
+}
+
+vector<TokenStateNode *> TokenStateNode::getStatesForCharacter(char character) {
+    return nextStates[character];
+}
+
+

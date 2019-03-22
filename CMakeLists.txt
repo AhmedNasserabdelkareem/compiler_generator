@@ -31,4 +31,4 @@ add_executable(compiler_generator_master
         utils/StringUtils.h
         main.cpp
         NFABuilder.cpp
-        NFABuilder.h)
+        NFABuilder.h models/FiniteStateTable.cpp models/FiniteStateTable.h)
