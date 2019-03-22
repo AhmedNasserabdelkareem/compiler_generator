@@ -15,8 +15,12 @@ RegularExpressions::RegularExpressions(const unordered_map<string, string> &expr
 
 void RegularExpressions::constructExpressionsRanges() {
     for (const auto &expressionPair: expressions) {
-        expressionsRanges[expressionPair.first] = getCharactersRangeFromExpression(expressionPair.second);
+        addExpression(expressionPair);
     }
+}
+
+void RegularExpressions::addExpression(const pair<const string, string> &expressionPair) {
+    expressionsRanges[expressionPair.first] = getCharactersRangeFromExpression(expressionPair.second);
 }
 
 vector<char> RegularExpressions::getCharactersRangeFromExpression(string expressionName) {

@@ -20,6 +20,8 @@ public:
     static const char KLEENE_CLOSURE = '*', POSITIVE_CLOSURE = '+',
             UNION = '|', CONCATENATION = 8, OPENING_BRACKET = '(', CLOSING_BRACKET = ')';
 
+    static const string LAMBDA;
+
 };
 
 

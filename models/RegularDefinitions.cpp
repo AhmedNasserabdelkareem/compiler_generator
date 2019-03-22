@@ -5,6 +5,8 @@
 #include <iostream>
 #include "RegularDefinitions.h"
 
+const string RegularDefinitions::LAMBDA = "\\L";
+
 RegularDefinitions::RegularDefinitions(const unordered_map<string, string> &definitions) : definitions(definitions) {
 
 }

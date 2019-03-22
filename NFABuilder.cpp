@@ -16,8 +16,6 @@ TokenStateNode NFABuilder::getInitialNFANode() {
 
 void NFABuilder::buildNFATree() {
 
-    int nextId = 0;
-
     for (const auto &definition : regularDefinitions.definitions) {
 
         vector<string> factoredDefinition = factorizeDefinition(definition.second);
@@ -26,15 +24,15 @@ void NFABuilder::buildNFATree() {
 
         for (const auto &token:factoredDefinition) {
 
-            if (IsInput(token))
-                Push(token);
+            if (!isOperator(token[0]))
+                pushToOperands(token);
             else if (operatorsStack.empty())
                 operatorsStack.push(token[0]);
-            else if (IsLeftParenthesis(token[0]))
+            else if (isLeftParenthesis(token[0]))
                 operatorsStack.push(token[0]);
-            else if (IsRightParenthesis(token[0])) {
+            else if (isRightParenthesis(token[0])) {
                 // Evaluate everyting in paranthesis
-                while (!IsLeftParenthesis(operatorsStack.top()))
+                while (!isLeftParenthesis(operatorsStack.top()))
                     if (!Eval())
                         return false;
                 // Remove left parenthesis after the evaluation
@@ -57,26 +55,24 @@ void NFABuilder::buildNFATree() {
             return false;
 
         // Last NFA state is always accepting state
-        stateTable.statesDequeue[stateTable.statesDequeue.size() - 1]->isAccepting = true;
-        stateTable.statesDequeue[stateTable.statesDequeue.size() - 1]->stateName = definition.first;
+        stateTable.statesDequeue.back()->isAccepting = true;
+        stateTable.statesDequeue.back()->stateName = definition.first;
 
-        initialNode.addNextState(TokenStateNode::LAMBDA, stateTable.statesDequeue[0]);
+        initialNode.addNextState(TokenStateNode::LAMBDA, stateTable.statesDequeue.front());
     }
+
+}
+
+void NFABuilder::pushToOperands(const string &regex) {
+
 
 }
 
 vector<string> NFABuilder::factorizeDefinition(string regularDefinition) {
 
-    //TODO:Implement
+    //TODO:Implement by Ahmed Nasser
+    // You will use regularDefinition and regularExpressions member variables
     return vector<string>();
-}
-
-bool NFABuilder::IsLeftParenthesis(const char &character) {
-    return character == RegularDefinitions::OPENING_BRACKET;
-}
-
-bool NFABuilder::IsRightParenthesis(const char &character) {
-    return character == RegularDefinitions::CLOSING_BRACKET;
 }
 
 /**
@@ -105,4 +101,18 @@ bool NFABuilder::hasHigherPrecedence(const char &testOperator, const char &compa
         return false;
 
     return true;
+}
+
+bool NFABuilder::isOperator(const char &operatorChar) {
+    return operatorChar == RegularDefinitions::UNION || operatorChar == RegularDefinitions::KLEENE_CLOSURE ||
+           operatorChar == RegularDefinitions::POSITIVE_CLOSURE || operatorChar == RegularDefinitions::CONCATENATION ||
+           isRightParenthesis(operatorChar) || isLeftParenthesis(operatorChar);
+}
+
+bool NFABuilder::isLeftParenthesis(const char &character) {
+    return character == RegularDefinitions::OPENING_BRACKET;
+}
+
+bool NFABuilder::isRightParenthesis(const char &character) {
+    return character == RegularDefinitions::CLOSING_BRACKET;
 }

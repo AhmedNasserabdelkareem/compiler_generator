@@ -22,10 +22,14 @@ public:
 
     vector<char> getCharactersRangeFromExpression(string expressionName);
 
-    void constructExpressionsRanges();
+    void addExpression(const pair<const string, string> &expressionPair);
+
 
 private:
     const char OR_OPERATOR = '|', RANGE_OPERATOR = '-';
+
+    void constructExpressionsRanges();
+
 };
 
 

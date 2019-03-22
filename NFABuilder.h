@@ -25,17 +25,23 @@ private:
     RegularExpressions regularExpressions;
     TokenStateNode initialNode;
     stack<char> operatorsStack;
+    stack<FiniteStateTable> operandsStack;
+    int nextStateId = 0;
 
 private:
     void buildNFATree();
 
     vector<string> factorizeDefinition(string regularDefinition);
 
-    bool IsLeftParenthesis(const char &character);
+    bool isLeftParenthesis(const char &character);
 
-    bool IsRightParenthesis(const char &character);
+    bool isRightParenthesis(const char &character);
 
     bool hasHigherPrecedence(const char &testOperator, const char &comparedToOperator);
+
+    bool isOperator(const char &operatorChar);
+
+    void pushToOperands(const string &regex);
 };
 
 
