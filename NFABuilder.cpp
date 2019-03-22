@@ -16,7 +16,7 @@ TokenStateNode NFABuilder::getInitialNFANode() {
 
 void NFABuilder::buildNFATree() {
 
-    for (const auto &definition : regularDefinitions.definitions) {
+  /*  for (const auto &definition : regularDefinitions.definitions) {
 
         vector<string> factoredDefinition = factorizeDefinition(definition.second);
 
@@ -59,7 +59,7 @@ void NFABuilder::buildNFATree() {
         stateTable.statesDequeue.back()->stateName = definition.first;
 
         initialNode.addNextState(TokenStateNode::LAMBDA, stateTable.statesDequeue.front());
-    }
+    }*/
 
 }
 
@@ -69,9 +69,9 @@ void NFABuilder::pushToOperands(const string &regex) {
 }
 
 vector<string> NFABuilder::factorizeDefinition(string regularDefinition) {
-
     //TODO:Implement by Ahmed Nasser
-    // You will use regularDefinition and regularExpressions member variables
+
+
     return vector<string>();
 }
 
