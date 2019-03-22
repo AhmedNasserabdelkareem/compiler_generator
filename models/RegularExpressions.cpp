@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "RegularExpressions.h"
+#include "RegularDefinitions.h"
 
 RegularExpressions::RegularExpressions(const unordered_map<string, string> &expressions) : expressions(expressions) {
 /*    cout<<"EXP"<<expressions.size()<<endl;
@@ -11,6 +12,8 @@ RegularExpressions::RegularExpressions(const unordered_map<string, string> &expr
         cout << it.first<<" : "<<it.second<<" "<<endl;
     }*/
     constructExpressionsRanges();
+
+    addExpression(make_pair(RegularDefinitions::LAMBDA, string(1, LAMBDA)));
 }
 
 void RegularExpressions::constructExpressionsRanges() {

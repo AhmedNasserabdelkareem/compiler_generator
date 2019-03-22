@@ -25,7 +25,6 @@ public:
 public:
     const string INVALID_STATE = "invalid_state";
     static const bool DEFAULT_ACCEPTING = false;
-    static const char LAMBDA = 0;
     static const int DEFAULT_ID = -1;
 
 public:

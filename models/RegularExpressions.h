@@ -26,7 +26,7 @@ public:
 
 
 private:
-    const char OR_OPERATOR = '|', RANGE_OPERATOR = '-';
+    const char OR_OPERATOR = '|', RANGE_OPERATOR = '-', LAMBDA = 0;
 
     void constructExpressionsRanges();
 
