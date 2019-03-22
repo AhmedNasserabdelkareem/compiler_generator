@@ -14,7 +14,7 @@ class TokenStateNode {
 public:
     TokenStateNode();
 
-    explicit TokenStateNode(int id);
+    TokenStateNode(int id);
 
     TokenStateNode(string name, bool accept): id(staticID++), stateName(name), isAccepting(accept){
 

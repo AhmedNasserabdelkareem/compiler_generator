@@ -14,7 +14,7 @@ void TokenStateNode::addNextState(char character, TokenStateNode *state) {
 
     if (nextStates.find(character) != nextStates.end()) {
         nextStates[character] = vector<TokenStateNode *>();
-    }
+    };
     nextStates[character].push_back(state);
 }
 
