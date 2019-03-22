@@ -19,13 +19,17 @@ public:
 
     TokenStateNode getInitialNFANode();
 
+    TokenStateNode initialNode;
+    unordered_set<char> charactersSet;
+
 private:
 
     RegularDefinitions regularDefinitions;
     RegularExpressions regularExpressions;
-    TokenStateNode initialNode;
+
     stack<char> operatorsStack;
     stack<FiniteStateTable> operandsStack;
+
     int nextStateId = 0;
 
 private:

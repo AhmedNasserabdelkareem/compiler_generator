@@ -13,8 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="544642a4-d939-42f8-914d-569ff9072f2f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/NFABuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NFABuilder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/RegularDefinitions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/models/RegularDefinitions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NFABuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/NFABuilder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/RegularExpressions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/models/RegularExpressions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/RegularExpressions.h" beforeDir="false" afterPath="$PROJECT_DIR$/models/RegularExpressions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/TokenStateNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/models/TokenStateNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/TokenStateNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/models/TokenStateNode.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,13 +30,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-700">
-              <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+            <state relative-caret-position="-459">
+              <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NFABuilder.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NFABuilder.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+              <folding>
+                <element signature="e#42#78#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,9 +72,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/models/RegularDefinitions.cpp" />
-        <option value="$PROJECT_DIR$/NFABuilder.cpp" />
         <option value="$PROJECT_DIR$/models/RegularDefinitions.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/NFABuilder.cpp" />
       </list>
     </option>
   </component>
@@ -72,7 +87,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -102,6 +117,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
@@ -134,15 +150,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553266861950</updated>
-      <workItem from="1553266869629" duration="7030000" />
+      <workItem from="1553266869629" duration="7169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7030000" />
+    <option name="totallyTimeSpent" value="7169000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -151,9 +167,9 @@
       <window_info anchor="bottom" id="CMake" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32968536" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32968536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32968536" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994528" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -199,13 +215,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Keywords.cpp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NFABuilder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/RegularDefinitions.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -279,10 +288,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
-          <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+        <state relative-caret-position="-459">
+          <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NFABuilder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+          <folding>
+            <element signature="e#42#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
