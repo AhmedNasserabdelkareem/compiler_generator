@@ -10,6 +10,13 @@ TokenStateNode::TokenStateNode() : id(DEFAULT_ID) {}
 
 TokenStateNode::TokenStateNode(int id) : id(id) {}
 
+
+void TokenStateNode::addNextState(vector<char> *characters, TokenStateNode *state) {
+    for (auto character : *characters) {
+        addNextState(character, state);
+    }
+}
+
 void TokenStateNode::addNextState(char character, TokenStateNode *state) {
 
     if (nextStates.find(character) == nextStates.end()) {
@@ -25,5 +32,4 @@ void TokenStateNode::removeStatesForCharacter(char character) {
 vector<TokenStateNode *> TokenStateNode::getStatesForCharacter(char character) {
     return nextStates[character];
 }
-
 
