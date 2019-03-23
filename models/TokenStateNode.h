@@ -16,9 +16,9 @@ public:
 
     TokenStateNode(int id);
 
-    TokenStateNode(string name, bool accept): id(staticID++), stateName(name), isAccepting(accept){
+    TokenStateNode(string name, bool accept) : id(staticID++), stateName(name), isAccepting(accept) {}
 
-    }
+    void addNextState(vector<char> *characters, TokenStateNode *state);
 
     void addNextState(char character, TokenStateNode *state);
 

@@ -17,9 +17,7 @@ class NFABuilder {
 public:
     NFABuilder(const RegularDefinitions &regularDefinitions, const RegularExpressions &regularExpressions);
 
-    TokenStateNode getInitialNFANode();
-
-    TokenStateNode initialNode;
+    TokenStateNode initialNode = TokenStateNode(nextStateId++);
     unordered_set<char> charactersSet;
 
 private:
@@ -46,6 +44,16 @@ private:
     bool isOperator(const char &operatorChar);
 
     void pushToOperands(const string &regex);
+
+    void evaluateNextOperands();
+
+    void unionOperands();
+
+    void positiveClosureOperand();
+
+    void kleeneClosureOperand();
+
+    void concatenateOperands();
 };
 
 
