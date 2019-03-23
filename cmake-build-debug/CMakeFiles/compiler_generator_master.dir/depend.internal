@@ -23,6 +23,8 @@ CMakeFiles/compiler_generator_master.dir/main.cpp.obj
  .././models/RulesParser.h
  .././models/TokenStateNode.h
  .././utils/StringUtils.h
+ ../models/RegularDefinitions.h
+ C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
  C:/Users/Ahmed/Desktop/compiler_generator/main.cpp
 CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.obj
  C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.cpp

@@ -74,6 +74,12 @@ vector
 sstream
 -
 
+../models/RegularDefinitions.h
+unordered_map
+-
+vector
+-
+
 C:/Users/Ahmed/Desktop/compiler_generator/DFAmini.cpp
 sstream
 -
@@ -90,6 +96,8 @@ C:/Users/Ahmed/Desktop/compiler_generator/models/TokenStateNode.h
 
 C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.cpp
 models/FiniteStateTable.h
+-
+iostream
 -
 NFABuilder.h
 C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
@@ -117,6 +125,10 @@ models/TokenStateNode.h
 -
 DFAmini.h
 -
+RegularDefinitions.h
+-
+NFABuilder.h
+C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.cpp
 ArithmeticOperators.h

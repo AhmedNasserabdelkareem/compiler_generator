@@ -35,7 +35,7 @@ private:
 private:
     void buildNFATree();
 
-    vector<string> factorizeDefinition(string regularDefinition);
+    vector<string> factorizeDefinition(string regularDefinition,unordered_map<string,string> definitions);
 
     bool isLeftParenthesis(const char &character);
 
@@ -46,6 +46,9 @@ private:
     bool isOperator(const char &operatorChar);
 
     void pushToOperands(const string &regex);
+    int smallestkeylength (unordered_map<string, string> definitions);
+    bool checkKeys(unordered_map<string, string> definitions,string x);
+    char getChar(char x);
 };
 
 

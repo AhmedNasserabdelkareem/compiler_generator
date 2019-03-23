@@ -3,6 +3,7 @@
 //
 
 #include <models/FiniteStateTable.h>
+#include <iostream>
 #include "NFABuilder.h"
 
 NFABuilder::NFABuilder(const RegularDefinitions &regularDefinitions, const RegularExpressions &regularExpressions)
@@ -60,19 +61,65 @@ void NFABuilder::buildNFATree() {
 
         initialNode.addNextState(RegularExpressions::LAMBDA, stateTable.statesDequeue.front());
     }*/
-
 }
 
 void NFABuilder::pushToOperands(const string &regex) {
 
-
 }
 
-vector<string> NFABuilder::factorizeDefinition(string regularDefinition) {
+vector<string> NFABuilder::factorizeDefinition(string x,unordered_map<string,string> definitions) {
     //TODO:Implement by Ahmed Nasser
-
-
-    return vector<string>();
+    vector<string> result ;
+    int smallLength = smallestkeylength(definitions);
+    int i=0;
+    while(i<x.size()){
+        char tmp = x[i];
+        if(x[i]==' '){
+            i++;
+            continue;
+        }
+        if(isalpha(x[i])&&x[i]!='E'&&x[i]!='L'){
+            string temp = x.substr(i,smallLength);
+            if(checkKeys(definitions,temp)){
+                result.push_back(definitions.at(temp));
+                i+=smallLength;
+                continue;
+            }else{
+                //TODO I NEED TO CHECK SOME FAULTS IN PDF
+            }
+        }
+        if(x[i]=='+'||x[i]=='*'||x[i]=='|'||x[i]=='.'||x[i]=='('||x[i]==')'||x[i]=='E'){
+            if(x[i]=='E'){
+                result.push_back(string(1,getChar(x[i])));
+                result.push_back(string(1,RegularDefinitions::CONCATENATION));
+            } else if(x[i]=='('){
+                result.push_back(string(1,RegularDefinitions::CONCATENATION));
+                result.push_back(string(1,getChar(x[i])));
+            } else if(x[i]==')' && i!=(x.size()-1)){
+                result.push_back(string(1,getChar(x[i])));
+                result.push_back(string(1,RegularDefinitions::CONCATENATION));
+            }else if(x[i]=='.'){
+                result.push_back(string(1,RegularDefinitions::CONCATENATION));
+                result.push_back(string(1,getChar(x[i])));
+                result.push_back(string(1,RegularDefinitions::CONCATENATION));
+            }else {
+                result.push_back(string(1, getChar(x[i])));
+            }
+            i++;
+            continue;
+        }
+        if(x[i]=='\\'&&x[i+1]=='L'){
+            string temp = x.substr(i,2);
+            result.push_back(RegularDefinitions::LAMBDA);
+            i+=2;
+            continue;
+        }
+        i++;
+    }
+/*    for (int i = 0; i < result.size(); ++i) {
+        cout<<result[i]<<endl;
+    }*/
+    return result;
 }
 
 /**
@@ -116,3 +163,38 @@ bool NFABuilder::isLeftParenthesis(const char &character) {
 bool NFABuilder::isRightParenthesis(const char &character) {
     return character == RegularDefinitions::CLOSING_BRACKET;
 }
+
+int NFABuilder::smallestkeylength(unordered_map<string, string> definitions) {
+    int min=1000;
+    for (auto& it: definitions) {
+        if(it.first.size()<min){
+            min=it.first.size();
+        }
+    }
+    return min;
+}
+
+bool NFABuilder::checkKeys(unordered_map<string, string> definitions, string x) {
+    auto iter = definitions.find(x);
+    return iter != definitions.end();
+}
+
+char NFABuilder::getChar(char x) {
+    switch (x){
+        case '*':
+            return RegularDefinitions::KLEENE_CLOSURE;
+        case '+':
+            return RegularDefinitions::POSITIVE_CLOSURE;
+        case '|':
+            return RegularDefinitions::UNION;
+        case '.':
+            return RegularDefinitions::DOT;
+        case 'E':
+            return RegularDefinitions::EXPONENT;
+        case '(':
+            return RegularDefinitions::OPENING_BRACKET;
+        case ')' :
+            return RegularDefinitions::CLOSING_BRACKET;
+    }
+}
+

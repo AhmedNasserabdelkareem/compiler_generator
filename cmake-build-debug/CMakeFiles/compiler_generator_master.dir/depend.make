@@ -22,6 +22,8 @@ CMakeFiles/compiler_generator_master.dir/main.cpp.obj: .././models/RegularExpres
 CMakeFiles/compiler_generator_master.dir/main.cpp.obj: .././models/RulesParser.h
 CMakeFiles/compiler_generator_master.dir/main.cpp.obj: .././models/TokenStateNode.h
 CMakeFiles/compiler_generator_master.dir/main.cpp.obj: .././utils/StringUtils.h
+CMakeFiles/compiler_generator_master.dir/main.cpp.obj: ../models/RegularDefinitions.h
+CMakeFiles/compiler_generator_master.dir/main.cpp.obj: ../NFABuilder.h
 CMakeFiles/compiler_generator_master.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.obj: ../models/ArithmeticOperators.cpp
