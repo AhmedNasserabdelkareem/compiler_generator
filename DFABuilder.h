@@ -7,6 +7,7 @@
 
 
 #include <models/TokenStateNode.h>
+#include <models/DFAState.h>
 #include "NFABuilder.h"
 
 class DFABuilder {
@@ -14,12 +15,13 @@ public:
     DFABuilder(TokenStateNode nfa);
     const int lambda = 0;
     void buildDFA();
+    bool nodeInStack(DFAState * u, stack<DFAState*> dfaStates);
 
 private:
     TokenStateNode startNFA;
-    TokenStateNode* epsilonClosure(TokenStateNode s);
+    DFAState* epsilonClosure(TokenStateNode s);
     int counterDFAStates = 0;
-
+    unordered_set<char> charactersSet;
 };
 
 
