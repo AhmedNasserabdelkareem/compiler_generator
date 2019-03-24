@@ -4,22 +4,34 @@
 
 #include <models/DFAState.h>
 #include "DFABuilder.h"
+#include <algorithm>
 
 DFABuilder::DFABuilder(TokenStateNode node): startNFA(node){
+    buildDFA();
 }
 
 void DFABuilder::buildDFA() {
-    stack<DFAState *> *dfaStates = new stack<DFAState *>;
-    dfaStates->push(epsilonClosure(startNFA));
+    deque<DFAState *> *dfaStates = new deque<DFAState *>;
+    deque<DFAState *>::iterator it = dfaStates->begin();
+    dfaStates->insert(it, epsilonClosure(startNFA));
+
     while (!dfaStates->empty()){
-        DFAState *t = dfaStates->top();
+        DFAState *t = dfaStates->front();
+        dfaStates->pop_front();
         t->markForConversion();
-        dfaStates->pop();
+
+        vector<DFAState *> v;
         for(auto itr = charactersSet.begin(); itr != charactersSet.end(); ++itr){
-            DFAState *u = t->move(*itr);
-            if(!nodeInStack(u, dfaStates)) dfaStates->push(u);
+            DFAState *u = t->move(*itr, counterDFAStates++);
+            if( find(dfaStates->begin(), dfaStates->end(), u) == dfaStates->end()){
+                u->unMarkForConversion();
+                dfaStates->insert(it, u);
+            }
+            //update result dfa
+            v.push_back(u);
         }
-        //update edge
+        Dtrans.push_back(v);
+        v = vector<DFAState *>(); //for deallocation
     }
 
 }
@@ -30,15 +42,10 @@ void DFABuilder::buildDFA() {
 //epsilon closure is a + c + d
 //here we get only c as e closure of a
 DFAState* DFABuilder::epsilonClosure(TokenStateNode s) {
-    DFAState *result = new DFAState(s.getStatesForCharacter(lambda));
+    DFAState *result = new DFAState(s.getStatesForCharacter(lambda), counterDFAStates++);
     return result;
 }
 
-bool DFAState:: nodeInStack(DFAState * u, stack<DFAState*> dfaStates) {
-    for(int i = 0; i < dfaStates.size(); i++){
-        if(u->equals(dfaStates.top()) ) return true;
-        dfaStates.pop();
-    }
-    return false;
+vector<vector<DFAState*> > DFABuilder::getDFA(){
+    return Dtrans;
 }
-

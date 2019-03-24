@@ -8,20 +8,23 @@
 
 #include <models/TokenStateNode.h>
 #include <models/DFAState.h>
+#include <set>
 #include "NFABuilder.h"
 
 class DFABuilder {
 public:
     DFABuilder(TokenStateNode nfa);
     const int lambda = 0;
-    void buildDFA();
-    bool nodeInStack(DFAState * u, stack<DFAState*> dfaStates);
+    vector<vector<DFAState*> > getDFA();
 
 private:
     TokenStateNode startNFA;
     DFAState* epsilonClosure(TokenStateNode s);
     int counterDFAStates = 0;
-    unordered_set<char> charactersSet;
+    set<char> charactersSet;
+    vector<vector<DFAState*> > Dtrans;
+    void buildDFA();
+
 };
 
 

@@ -3,6 +3,7 @@
 #include <regex>
 #include <models/TokenStateNode.h>
 #include <DFAmini.h>
+#include "Controller.h"
 
 using namespace std;
 void sharafTest();
@@ -10,6 +11,10 @@ void sharafTest();
 int main() {
     string rules = "../input/rules.txt";
     string test = "../input/test.txt";
+    Controller controller(rules);
+    controller.start();
+
+
     RulesParser parser (rules);
     parser.init();
 
