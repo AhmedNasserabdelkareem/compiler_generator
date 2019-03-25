@@ -1,0 +1,3 @@
+C:/Users/Ahmed/Desktop/compiler_generator/cmake-build-debug/CMakeFiles/compiler_generator_master.dir
+C:/Users/Ahmed/Desktop/compiler_generator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ahmed/Desktop/compiler_generator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
