@@ -4,6 +4,7 @@
 #include <models/TokenStateNode.h>
 #include <DFAmini.h>
 #include "Controller.h"
+#include "DFABuilder.h"
 
 using namespace std;
 void sharafTest();
@@ -28,70 +29,96 @@ int main() {
 }
 
 void husseinTest() {
-    TokenStateNode
-}
-
-void sharafTest(){
     TokenStateNode a = TokenStateNode("A", false);
     TokenStateNode b = TokenStateNode("B", false);
     TokenStateNode c = TokenStateNode("C", true);
+
     TokenStateNode d = TokenStateNode("D", true);
     TokenStateNode e = TokenStateNode("E", true);
-    TokenStateNode f = TokenStateNode("F", false);
 
-    vector<vector<TokenStateNode> > states(6, vector<TokenStateNode>());
-    states[0].push_back(a);
-    states[0].push_back(b);
-    states[0].push_back(c);
+    a.addNextState('x', &b);
+    a.addNextState('x', &a);
+    a.addNextState('y', &a);
+    b.addNextState('x', &c);
 
-    states[1].push_back(b);
-    states[1].push_back(a);
-    states[1].push_back(d);
 
-    states[2].push_back(c);
-    states[2].push_back(e);
-    states[2].push_back(f);
+//    a.addNextState(RegularExpressions::LAMBDA, &b);
+//    a.addNextState(RegularExpressions::LAMBDA, &c);
+//    b.addNextState(RegularExpressions::LAMBDA, &d);
+//    b.addNextState(RegularExpressions::LAMBDA, &c);
+//    d.addNextState(RegularExpressions::LAMBDA, &e);
 
-    states[3].push_back(d);
-    states[3].push_back(e);
-    states[3].push_back(f);
+    TokenStateNode initialNode = a;
+    set<char> charactersSet;
+    charactersSet.insert('x');
+    charactersSet.insert('y');
+    DFABuilder *dfaBuilder = new DFABuilder(initialNode, charactersSet);
+//    DFAState * result = dfaBuilder->getDFAInitialNode();
+    vector<vector<DFAState*>> dfa = dfaBuilder->getDFA();
 
-    states[4].push_back(e);
-    states[4].push_back(e);
-    states[4].push_back(f);
-
-    states[5].push_back(f);
-    states[5].push_back(f);
-    states[5].push_back(f);
-
-    cout << "    0  1" << endl;
-    cout << "   -----" << endl;
-    for (int i = 0; i < states.size(); ++i) {
-        for (int j = 0; j < states[0].size(); ++j) {
-            cout << states[i][j].stateName + " ";
-            if (j == 0)
-                cout << "|";
-
-            cout << " ";
-        }
-        cout << endl;
-    }
-
-    DFAmini mini;
-    states = mini.getMinimizedDFA(states);
-    mini.printMinimizedStates();
-
-    cout << endl;
-    cout << "      0   1" << endl;
-    cout << "    -------" << endl;
-    for (int i = 0; i < states.size(); ++i) {
-        for (int j = 0; j < states[0].size(); ++j) {
-            cout << states[i][j].stateName + " ";
-            if (j == 0)
-                cout << "|";
-
-            cout << " ";
-        }
-        cout << endl;
-    }
 }
+//
+//void sharafTest(){
+//    TokenStateNode a = TokenStateNode("A", false);
+//    TokenStateNode b = TokenStateNode("B", false);
+//    TokenStateNode c = TokenStateNode("C", true);
+//    TokenStateNode d = TokenStateNode("D", true);
+//    TokenStateNode e = TokenStateNode("E", true);
+//    TokenStateNode f = TokenStateNode("F", false);
+//
+//    vector<vector<TokenStateNode> > states(6, vector<TokenStateNode>());
+//    states[0].push_back(a);
+//    states[0].push_back(b);
+//    states[0].push_back(c);
+//
+//    states[1].push_back(b);
+//    states[1].push_back(a);
+//    states[1].push_back(d);
+//
+//    states[2].push_back(c);
+//    states[2].push_back(e);
+//    states[2].push_back(f);
+//
+//    states[3].push_back(d);
+//    states[3].push_back(e);
+//    states[3].push_back(f);
+//
+//    states[4].push_back(e);
+//    states[4].push_back(e);
+//    states[4].push_back(f);
+//
+//    states[5].push_back(f);
+//    states[5].push_back(f);
+//    states[5].push_back(f);
+//
+//    cout << "    0  1" << endl;
+//    cout << "   -----" << endl;
+//    for (int i = 0; i < states.size(); ++i) {
+//        for (int j = 0; j < states[0].size(); ++j) {
+//            cout << states[i][j].stateName + " ";
+//            if (j == 0)
+//                cout << "|";
+//
+//            cout << " ";
+//        }
+//        cout << endl;
+//    }
+//
+//    DFAmini mini;
+//    states = mini.getMinimizedDFA(states);
+//    mini.printMinimizedStates();
+//
+//    cout << endl;
+//    cout << "      0   1" << endl;
+//    cout << "    -------" << endl;
+//    for (int i = 0; i < states.size(); ++i) {
+//        for (int j = 0; j < states[0].size(); ++j) {
+//            cout << states[i][j].stateName + " ";
+//            if (j == 0)
+//                cout << "|";
+//
+//            cout << " ";
+//        }
+//        cout << endl;
+//    }
+//}

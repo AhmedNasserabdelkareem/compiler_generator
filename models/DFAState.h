@@ -17,11 +17,11 @@ public:
     void markForConversion();
     void unMarkForConversion();
     bool equals(DFAState *state);
-
+    bool isAcceptance();
 
 public:
     unordered_map<char, vector<DFAState *>> nextDFAStates;
-    vector<TokenStateNode *> formingDFAStates;
+    vector<TokenStateNode *> formingNFAStates;
     int id = -1;
 
 private:

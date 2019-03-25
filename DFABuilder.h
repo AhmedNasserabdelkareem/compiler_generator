@@ -9,21 +9,21 @@
 #include <models/TokenStateNode.h>
 #include <models/DFAState.h>
 #include <set>
-#include "NFABuilder.h"
 
 class DFABuilder {
 public:
     DFABuilder(TokenStateNode nfa, set<char>);
-    const int lambda = 0;
     vector<vector<DFAState*> > getDFA();
+    DFAState* getDFAInitialNode();
 
 private:
     TokenStateNode startNFA;
-    DFAState* epsilonClosure(TokenStateNode s);
-    int counterDFAStates = 0;
+    int counterDFAStates;
     set<char> charactersSet;
     vector<vector<DFAState*> > Dtrans;
     void buildDFA();
+    bool nodeInVector(vector<TokenStateNode *>, TokenStateNode*);
+    DFAState* epsilonClosure(TokenStateNode s);
 
 };
 
