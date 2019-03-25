@@ -8,19 +8,27 @@
 using namespace std;
 void sharafTest();
 
+void husseinTest();
+
 int main() {
     string rules = "../input/rules.txt";
     string test = "../input/test.txt";
-    Controller controller(rules);
-    controller.start();
+//    Controller controller(rules);
+//    controller.start();
 
 
-    RulesParser parser (rules);
-    parser.init();
+//    RulesParser parser (rules);
+//    parser.init();
+//
+//    sharafTest();
 
-    sharafTest();
+    husseinTest();
 
     return 0;
+}
+
+void husseinTest() {
+    TokenStateNode
 }
 
 void sharafTest(){
