@@ -6,6 +6,7 @@
 #include "Controller.h"
 #include "NFABuilder.h"
 #include "DFABuilder.h"
+#include "DFAmini.h"
 
 Controller::Controller(string x){
     rules = x;
@@ -18,9 +19,11 @@ void Controller::start() {
     NFABuilder *nfaBuilder = new NFABuilder(new RegularDefinitions(),new RegularExpressions());
     TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
 
-    DFABuilder *dfaBuilder = new DFABuilder(initialNode);
+    DFABuilder *dfaBuilder = new DFABuilder(initialNode, nfaBuilder->charactersSet);
     vector<vector<DFAState*>> dfa = dfaBuilder->getDFA();
 
+    DFAmini *dfaMini = new DFAmini();
+    dfaMini->getMinimizedDFA(dfa);
 
 
 }

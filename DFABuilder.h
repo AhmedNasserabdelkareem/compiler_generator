@@ -13,7 +13,7 @@
 
 class DFABuilder {
 public:
-    DFABuilder(TokenStateNode nfa);
+    DFABuilder(TokenStateNode nfa, set<char>);
     const int lambda = 0;
     vector<vector<DFAState*> > getDFA();
 

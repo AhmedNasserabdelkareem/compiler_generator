@@ -6,7 +6,8 @@
 #include "DFABuilder.h"
 #include <algorithm>
 
-DFABuilder::DFABuilder(TokenStateNode node): startNFA(node){
+DFABuilder::DFABuilder(TokenStateNode node, set<char> language): startNFA(node){
+    charactersSet = language;
     buildDFA();
 }
 

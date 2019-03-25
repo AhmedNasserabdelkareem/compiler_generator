@@ -11,6 +11,7 @@
 #include <models/Keywords.h>
 #include <models/TokenStateNode.h>
 #include <stack>
+#include <set>
 
 class NFABuilder {
 
@@ -20,7 +21,7 @@ public:
     TokenStateNode getInitialNFANode();
 
     TokenStateNode initialNode;
-    unordered_set<char> charactersSet;
+    set<char> charactersSet;
 
 private:
 
