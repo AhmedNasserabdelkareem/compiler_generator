@@ -381,6 +381,106 @@ CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj.provide
 CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj.provides.build: CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj
 
 
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj: CMakeFiles/compiler_generator_master.dir/flags.make
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj: CMakeFiles/compiler_generator_master.dir/includes_CXX.rsp
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj: ../DFABuilder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\compiler_generator_master.dir\DFABuilder.cpp.obj -c C:\Users\Ahmed\Desktop\compiler_generator\DFABuilder.cpp
+
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ahmed\Desktop\compiler_generator\DFABuilder.cpp > CMakeFiles\compiler_generator_master.dir\DFABuilder.cpp.i
+
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ahmed\Desktop\compiler_generator\DFABuilder.cpp -o CMakeFiles\compiler_generator_master.dir\DFABuilder.cpp.s
+
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.requires:
+
+.PHONY : CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.requires
+
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.provides: CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.provides.build
+.PHONY : CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.provides
+
+CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.provides.build: CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj
+
+
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj: CMakeFiles/compiler_generator_master.dir/flags.make
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj: CMakeFiles/compiler_generator_master.dir/includes_CXX.rsp
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj: ../models/DFAState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\compiler_generator_master.dir\models\DFAState.cpp.obj -c C:\Users\Ahmed\Desktop\compiler_generator\models\DFAState.cpp
+
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ahmed\Desktop\compiler_generator\models\DFAState.cpp > CMakeFiles\compiler_generator_master.dir\models\DFAState.cpp.i
+
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ahmed\Desktop\compiler_generator\models\DFAState.cpp -o CMakeFiles\compiler_generator_master.dir\models\DFAState.cpp.s
+
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.requires
+
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.provides: CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.provides.build
+.PHONY : CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.provides
+
+CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.provides.build: CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj
+
+
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj: CMakeFiles/compiler_generator_master.dir/flags.make
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj: CMakeFiles/compiler_generator_master.dir/includes_CXX.rsp
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj: ../Controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\compiler_generator_master.dir\Controller.cpp.obj -c C:\Users\Ahmed\Desktop\compiler_generator\Controller.cpp
+
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compiler_generator_master.dir/Controller.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ahmed\Desktop\compiler_generator\Controller.cpp > CMakeFiles\compiler_generator_master.dir\Controller.cpp.i
+
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compiler_generator_master.dir/Controller.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ahmed\Desktop\compiler_generator\Controller.cpp -o CMakeFiles\compiler_generator_master.dir\Controller.cpp.s
+
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.requires:
+
+.PHONY : CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.requires
+
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.provides: CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.provides.build
+.PHONY : CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.provides
+
+CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.provides.build: CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj
+
+
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj: CMakeFiles/compiler_generator_master.dir/flags.make
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj: CMakeFiles/compiler_generator_master.dir/includes_CXX.rsp
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj: ../models/DFAminiState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\compiler_generator_master.dir\models\DFAminiState.cpp.obj -c C:\Users\Ahmed\Desktop\compiler_generator\models\DFAminiState.cpp
+
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ahmed\Desktop\compiler_generator\models\DFAminiState.cpp > CMakeFiles\compiler_generator_master.dir\models\DFAminiState.cpp.i
+
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ahmed\Desktop\compiler_generator\models\DFAminiState.cpp -o CMakeFiles\compiler_generator_master.dir\models\DFAminiState.cpp.s
+
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.requires
+
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.provides: CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.provides.build
+.PHONY : CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.provides
+
+CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.provides.build: CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj
+
+
 # Object files for target compiler_generator_master
 compiler_generator_master_OBJECTS = \
 "CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.obj" \
@@ -395,7 +495,11 @@ compiler_generator_master_OBJECTS = \
 "CMakeFiles/compiler_generator_master.dir/DFAmini.cpp.obj" \
 "CMakeFiles/compiler_generator_master.dir/main.cpp.obj" \
 "CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.obj" \
-"CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj"
+"CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj" \
+"CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj" \
+"CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj" \
+"CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj" \
+"CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj"
 
 # External object files for target compiler_generator_master
 compiler_generator_master_EXTERNAL_OBJECTS =
@@ -413,11 +517,15 @@ compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/DFAmini.
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/main.cpp.obj
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.obj
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj
+compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj
+compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj
+compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj
+compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/build.make
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/linklibs.rsp
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/objects1.rsp
 compiler_generator_master.exe: CMakeFiles/compiler_generator_master.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable compiler_generator_master.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Ahmed\Desktop\compiler_generator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable compiler_generator_master.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\compiler_generator_master.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -438,6 +546,10 @@ CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator
 CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/main.cpp.obj.requires
 CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.obj.requires
 CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.obj.requires
+CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj.requires
+CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj.requires
+CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj.requires
+CMakeFiles/compiler_generator_master.dir/requires: CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj.requires
 
 .PHONY : CMakeFiles/compiler_generator_master.dir/requires
 

@@ -11,6 +11,18 @@ vector
 -
 models/TokenStateNode.h
 .././models/TokenStateNode.h
+models/DFAState.h
+.././models/DFAState.h
+models/DFAminiState.h
+.././models/DFAminiState.h
+
+.././models/DFAState.h
+TokenStateNode.h
+.././models/TokenStateNode.h
+
+.././models/DFAminiState.h
+string
+-
 
 .././models/FiniteStateTable.h
 deque
@@ -74,16 +86,52 @@ vector
 sstream
 -
 
-../models/RegularDefinitions.h
-unordered_map
+C:/Users/Ahmed/Desktop/compiler_generator/Controller.cpp
+models/RulesParser.h
 -
-vector
+Controller.h
+C:/Users/Ahmed/Desktop/compiler_generator/Controller.h
+NFABuilder.h
+C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
+DFABuilder.h
+C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.h
+DFAmini.h
+C:/Users/Ahmed/Desktop/compiler_generator/DFAmini.h
+
+C:/Users/Ahmed/Desktop/compiler_generator/Controller.h
+iostream
+-
+
+C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.cpp
+models/DFAState.h
+-
+DFABuilder.h
+C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.h
+algorithm
+-
+deque
+-
+models/RegularExpressions.h
+-
+stack
+-
+
+C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.h
+models/TokenStateNode.h
+-
+models/DFAState.h
+-
+set
 -
 
 C:/Users/Ahmed/Desktop/compiler_generator/DFAmini.cpp
 sstream
 -
 iostream
+-
+models/DFAState.h
+-
+models/DFAminiState.h
 -
 DFAmini.h
 C:/Users/Ahmed/Desktop/compiler_generator/DFAmini.h
@@ -93,6 +141,10 @@ vector
 -
 models/TokenStateNode.h
 C:/Users/Ahmed/Desktop/compiler_generator/models/TokenStateNode.h
+models/DFAState.h
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAState.h
+models/DFAminiState.h
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAminiState.h
 
 C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.cpp
 models/FiniteStateTable.h
@@ -111,7 +163,11 @@ models/Keywords.h
 -
 models/TokenStateNode.h
 -
+models/FiniteStateTable.h
+-
 stack
+-
+set
 -
 
 C:/Users/Ahmed/Desktop/compiler_generator/main.cpp
@@ -125,10 +181,10 @@ models/TokenStateNode.h
 -
 DFAmini.h
 -
-RegularDefinitions.h
--
-NFABuilder.h
-C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
+Controller.h
+C:/Users/Ahmed/Desktop/compiler_generator/Controller.h
+DFABuilder.h
+C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.h
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.cpp
 ArithmeticOperators.h
@@ -136,6 +192,22 @@ C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.h
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.h
 unordered_set
+-
+
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAState.cpp
+DFAState.h
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAState.h
+
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAState.h
+TokenStateNode.h
+C:/Users/Ahmed/Desktop/compiler_generator/models/TokenStateNode.h
+
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAminiState.cpp
+DFAminiState.h
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAminiState.h
+
+C:/Users/Ahmed/Desktop/compiler_generator/models/DFAminiState.h
+string
 -
 
 C:/Users/Ahmed/Desktop/compiler_generator/models/FiniteStateTable.cpp

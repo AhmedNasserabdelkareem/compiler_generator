@@ -122,6 +122,60 @@ compiler_generator_master/fast:
 	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/build
 .PHONY : compiler_generator_master/fast
 
+Controller.obj: Controller.cpp.obj
+
+.PHONY : Controller.obj
+
+# target to build an object file
+Controller.cpp.obj:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.obj
+.PHONY : Controller.cpp.obj
+
+Controller.i: Controller.cpp.i
+
+.PHONY : Controller.i
+
+# target to preprocess a source file
+Controller.cpp.i:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.i
+.PHONY : Controller.cpp.i
+
+Controller.s: Controller.cpp.s
+
+.PHONY : Controller.s
+
+# target to generate assembly for a file
+Controller.cpp.s:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.s
+.PHONY : Controller.cpp.s
+
+DFABuilder.obj: DFABuilder.cpp.obj
+
+.PHONY : DFABuilder.obj
+
+# target to build an object file
+DFABuilder.cpp.obj:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.obj
+.PHONY : DFABuilder.cpp.obj
+
+DFABuilder.i: DFABuilder.cpp.i
+
+.PHONY : DFABuilder.i
+
+# target to preprocess a source file
+DFABuilder.cpp.i:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.i
+.PHONY : DFABuilder.cpp.i
+
+DFABuilder.s: DFABuilder.cpp.s
+
+.PHONY : DFABuilder.s
+
+# target to generate assembly for a file
+DFABuilder.cpp.s:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.s
+.PHONY : DFABuilder.cpp.s
+
 DFAmini.obj: DFAmini.cpp.obj
 
 .PHONY : DFAmini.obj
@@ -229,6 +283,60 @@ models/ArithmeticOperators.s: models/ArithmeticOperators.cpp.s
 models/ArithmeticOperators.cpp.s:
 	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.s
 .PHONY : models/ArithmeticOperators.cpp.s
+
+models/DFAState.obj: models/DFAState.cpp.obj
+
+.PHONY : models/DFAState.obj
+
+# target to build an object file
+models/DFAState.cpp.obj:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.obj
+.PHONY : models/DFAState.cpp.obj
+
+models/DFAState.i: models/DFAState.cpp.i
+
+.PHONY : models/DFAState.i
+
+# target to preprocess a source file
+models/DFAState.cpp.i:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.i
+.PHONY : models/DFAState.cpp.i
+
+models/DFAState.s: models/DFAState.cpp.s
+
+.PHONY : models/DFAState.s
+
+# target to generate assembly for a file
+models/DFAState.cpp.s:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.s
+.PHONY : models/DFAState.cpp.s
+
+models/DFAminiState.obj: models/DFAminiState.cpp.obj
+
+.PHONY : models/DFAminiState.obj
+
+# target to build an object file
+models/DFAminiState.cpp.obj:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.obj
+.PHONY : models/DFAminiState.cpp.obj
+
+models/DFAminiState.i: models/DFAminiState.cpp.i
+
+.PHONY : models/DFAminiState.i
+
+# target to preprocess a source file
+models/DFAminiState.cpp.i:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.i
+.PHONY : models/DFAminiState.cpp.i
+
+models/DFAminiState.s: models/DFAminiState.cpp.s
+
+.PHONY : models/DFAminiState.s
+
+# target to generate assembly for a file
+models/DFAminiState.cpp.s:
+	$(MAKE) -f CMakeFiles\compiler_generator_master.dir\build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.s
+.PHONY : models/DFAminiState.cpp.s
 
 models/FiniteStateTable.obj: models/FiniteStateTable.cpp.obj
 
@@ -482,6 +590,12 @@ help:
 	@echo ... compiler_generator_master
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Controller.obj
+	@echo ... Controller.i
+	@echo ... Controller.s
+	@echo ... DFABuilder.obj
+	@echo ... DFABuilder.i
+	@echo ... DFABuilder.s
 	@echo ... DFAmini.obj
 	@echo ... DFAmini.i
 	@echo ... DFAmini.s
@@ -494,6 +608,12 @@ help:
 	@echo ... models/ArithmeticOperators.obj
 	@echo ... models/ArithmeticOperators.i
 	@echo ... models/ArithmeticOperators.s
+	@echo ... models/DFAState.obj
+	@echo ... models/DFAState.i
+	@echo ... models/DFAState.s
+	@echo ... models/DFAminiState.obj
+	@echo ... models/DFAminiState.i
+	@echo ... models/DFAminiState.s
 	@echo ... models/FiniteStateTable.obj
 	@echo ... models/FiniteStateTable.i
 	@echo ... models/FiniteStateTable.s

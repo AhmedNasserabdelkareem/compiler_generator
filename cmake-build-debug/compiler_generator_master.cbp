@@ -88,6 +88,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/Controller.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/Controller.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/DFABuilder.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
 		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/DFAmini.cpp">
 			<Option target="compiler_generator_master"/>
 		</Unit>
@@ -113,6 +125,18 @@
 			<Option target="compiler_generator_master"/>
 		</Unit>
 		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/ArithmeticOperators.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/DFAState.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/DFAState.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/DFAminiState.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/DFAminiState.h">
 			<Option target="compiler_generator_master"/>
 		</Unit>
 		<Unit filename="C:/Users/Ahmed/Desktop/compiler_generator/models/FiniteStateTable.cpp">

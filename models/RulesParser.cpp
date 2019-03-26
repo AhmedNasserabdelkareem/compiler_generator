@@ -11,10 +11,6 @@ RulesParser::RulesParser(string input) {rulesFile=input;}
 void RulesParser::init() {
     readFile();
     fillData();
-    RegularExpressions *regExp = new RegularExpressions (exp);
-    RegularDefinitions *regDef = new RegularDefinitions (def);
-    Keywords *keys = new Keywords (keywrds);
-    Punctuations *pun = new Punctuations(punc);
 }
 void RulesParser::readFile() {
     streamfile.open(rulesFile);
@@ -142,5 +138,21 @@ vector<string> RulesParser::splitString(string line,char delimiter) {
         temp.push_back(in);
     }
     return temp;
+}
+
+const unordered_map<string, string> &RulesParser::getDef() const {
+    return def;
+}
+
+const unordered_map<string, string> &RulesParser::getExp() const {
+    return exp;
+}
+
+const unordered_set<string> &RulesParser::getPunc() const {
+    return punc;
+}
+
+const unordered_set<string> &RulesParser::getKeywrds() const {
+    return keywrds;
 }
 

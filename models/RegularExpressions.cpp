@@ -7,7 +7,7 @@
 #include "RegularDefinitions.h"
 
 RegularExpressions::RegularExpressions(const unordered_map<string, string> &expressions) : expressions(expressions) {
-    constructExpressionsRanges();
+   constructExpressionsRanges();
 
     addExpression(make_pair(RegularDefinitions::LAMBDA, string(1, LAMBDA)));
 }
@@ -26,7 +26,7 @@ vector<char> RegularExpressions::getCharactersRangeFromExpression(string express
 
     vector<char> expressionCharactersRange;
 
-    vector<string> separatedRanges = StringUtils::split(expressions[expressionName], OR_OPERATOR);
+    vector<string> separatedRanges = StringUtils::split(expressionName, OR_OPERATOR);
 
     for (auto charactersRange : separatedRanges) {
 

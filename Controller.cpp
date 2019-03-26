@@ -15,8 +15,11 @@ Controller::Controller(string x){
 void Controller::start() {
     RulesParser parser(rules);
     parser.init();
-
-    NFABuilder *nfaBuilder = new NFABuilder(new RegularDefinitions(),new RegularExpressions());
+/*   cout<<"EXP"<<r->expressionsRanges.size()<<endl;
+    for (auto& it: r->expressionsRanges) {
+        cout << it.first<<" : "<<it.second<<" "<<endl;
+    }*/
+    NFABuilder *nfaBuilder = new NFABuilder(*new RegularDefinitions(parser.getExp()),*new RegularExpressions(parser.getDef()));
     TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
 
     DFABuilder *dfaBuilder = new DFABuilder(initialNode, nfaBuilder->charactersSet);
