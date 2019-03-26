@@ -22,8 +22,10 @@ private:
     set<char> charactersSet;
     vector<vector<DFAState*> > Dtrans;
     void buildDFA();
-    bool nodeInVector(vector<TokenStateNode *>, TokenStateNode*);
-    DFAState epsilonClosure(TokenStateNode s);
+    bool nodeInVector(vector<TokenStateNode>, TokenStateNode*);
+//    DFAState epsilonClosure(TokenStateNode s);
+    vector<TokenStateNode> epsilonClosure(TokenStateNode n);
+    DFAState *startingDFA;
 
 };
 

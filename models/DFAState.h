@@ -11,7 +11,7 @@
 class DFAState {
 
 public:
-    DFAState(vector<TokenStateNode *> formingStates, int id);
+    DFAState(vector<TokenStateNode> formingStates, int id);
     void addNextState(char character, DFAState *state);
     DFAState * move(char input, int id);
     void markForConversion();
@@ -21,7 +21,7 @@ public:
 
 public:
     unordered_map<char, vector<DFAState *>> nextDFAStates;
-    vector<TokenStateNode *> formingNFAStates;
+    vector<TokenStateNode> formingNFAStates;
     int id = -1;
 
 private:

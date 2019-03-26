@@ -13,13 +13,16 @@
 DFABuilder::DFABuilder(TokenStateNode node, set<char> language): startNFA(node){
     charactersSet = language;
     counterDFAStates = 0;
+    vector<TokenStateNode> formation = epsilonClosure(startNFA);
+    DFAState x(formation, counterDFAStates++);
+    this->startingDFA = &x;
     buildDFA();
 }
 
 void DFABuilder::buildDFA() {
     deque<DFAState *> *dfaStates = new deque<DFAState *>;
-    DFAState startingDFA =  epsilonClosure(startNFA);
-    dfaStates->insert(dfaStates->begin(), &startingDFA);
+
+    dfaStates->insert(dfaStates->begin(), startingDFA);
     while (!dfaStates->empty()){
         DFAState *t = dfaStates->front();
         dfaStates->pop_front();
@@ -42,11 +45,10 @@ void DFABuilder::buildDFA() {
 
 }
 
-//Tested
-DFAState DFABuilder::epsilonClosure(TokenStateNode n) {
+vector<TokenStateNode> DFABuilder::epsilonClosure(TokenStateNode n) {
     deque<TokenStateNode *> q;
-    vector<TokenStateNode *> formation;
-    formation.push_back(&n);
+    vector<TokenStateNode> formation;
+    formation.push_back(n);
     vector<TokenStateNode *> initialStates = n.getStatesForCharacter(RegularExpressions::LAMBDA);
     for(int i = 0; i < initialStates.size(); i++){
         q.insert(q.begin(), initialStates[i]);
@@ -58,23 +60,22 @@ DFAState DFABuilder::epsilonClosure(TokenStateNode n) {
         for(int i = 0; i < innerETransitions.size(); i++){
             q.insert(q.begin(), innerETransitions[i]);
         }
-        if(!nodeInVector(formation, u)) formation.push_back(u);
+        if(!nodeInVector(formation, u)) formation.push_back(*u);
     }
-    DFAState result(formation, counterDFAStates++);
-    return result;
+    return formation;
 }
+
 
 vector<vector<DFAState*> > DFABuilder::getDFA(){
     return Dtrans;
 }
 DFAState DFABuilder::getDFAInitialNode(){
-    DFAState x = epsilonClosure(startNFA);
-    return x;
+    return *startingDFA;
 }
 
-bool DFABuilder::nodeInVector(vector<TokenStateNode *> v, TokenStateNode* n){
+bool DFABuilder::nodeInVector(vector<TokenStateNode> v, TokenStateNode *n){
     for(int i = 0; i < v.size(); i++){
-        if(n == v[i]) return true;
+        if(n == &v[i]) return true;
     }
     return false;
 }

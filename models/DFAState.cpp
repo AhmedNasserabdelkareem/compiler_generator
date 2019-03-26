@@ -3,7 +3,7 @@
 //
 
 #include "DFAState.h"
-DFAState:: DFAState(vector<TokenStateNode *> s, int x){
+DFAState:: DFAState(vector<TokenStateNode> s, int x){
     formingNFAStates = s;
     id = x;
 }
@@ -16,12 +16,12 @@ void DFAState::addNextState(char character, DFAState *state) {
 }
 
 DFAState* DFAState::move(char input, int dfaStateID){
-    vector<TokenStateNode *> formation;
+    vector<TokenStateNode> formation;
     for(int i = 0; i < formingNFAStates.size(); i++){
         //
-        vector<TokenStateNode *> v = formingNFAStates[i]->getStatesForCharacter(input);
+        vector<TokenStateNode *> v = formingNFAStates[i].getStatesForCharacter(input);
         for(int j = 0; j < v.size(); j++){
-            formation.push_back(v[j]);
+            formation.push_back(*v[j]);
         }
     }
     return new DFAState(formation, dfaStateID);
@@ -41,7 +41,7 @@ bool DFAState::equals(DFAState *x){
 
 bool DFAState::isAcceptance() {
     for(int i = 0; i < formingNFAStates.size(); i++){
-        if(formingNFAStates[i]->isAccepting) return true;
+        if(formingNFAStates[i].isAccepting) return true;
     }
     return false;
 }
