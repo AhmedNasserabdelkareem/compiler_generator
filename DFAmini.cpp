@@ -4,12 +4,15 @@
 
 #include <sstream>
 #include <iostream>
+#include <models/DFAState.h>
+#include <models/DFAminiState.h>
 #include "DFAmini.h"
 
-vector<vector<TokenStateNode> > DFAmini::getMinimizedDFA(vector<vector<TokenStateNode> > dfa) {
+vector<vector<DFAminiState> > DFAmini::getMinimizedDFA(vector<vector<DFAState> > dfa) {
 
+    sortDFA(&dfa);
     getZeroEquivalent(dfa);
-    vector<vector<TokenStateNode> > newStates = states;
+    vector<vector<DFAState> > newStates = states;
     bool stateAdded;
 
     do {
@@ -20,7 +23,7 @@ vector<vector<TokenStateNode> > DFAmini::getMinimizedDFA(vector<vector<TokenStat
             if (states[i].size() == 1) {//class has only one state so add it to newStates immediately
                 newStates.push_back(states[i]);
             } else {
-                vector<TokenStateNode> firstState(1, states[i][0]);
+                vector<DFAState> firstState(1, states[i][0]);
                 int startCheckingClassesFrom = newStates.size();//first classes won't be equivalent so check from last one and newly added
                 newStates.push_back(firstState); //push the first element in the class to a new class
                 for (int j = 1; j < states[i].size(); ++j) {
@@ -33,7 +36,7 @@ vector<vector<TokenStateNode> > DFAmini::getMinimizedDFA(vector<vector<TokenStat
                     }
 
                     if (!stateAdded) {//no equivalent classes so add it in a new class
-                        vector<TokenStateNode> newClass(1, states[i][j]);
+                        vector<DFAState> newClass(1, states[i][j]);
                         newStates.push_back(newClass);
                     }
                 }
@@ -45,10 +48,10 @@ vector<vector<TokenStateNode> > DFAmini::getMinimizedDFA(vector<vector<TokenStat
     return renameStates(dfa);
 }
 
-void DFAmini::getZeroEquivalent(vector<vector<TokenStateNode> > dfa) {
+void DFAmini::getZeroEquivalent(vector<vector<DFAState> > dfa) {
 
     for (int i = 0; i < dfa.size(); ++i) {
-        if (!dfa[i][0].isAccepting)
+        if (!dfa[i][0].isAcceptance())
             states[0].push_back(dfa[i][0]);
         else
             states[1].push_back(dfa[i][0]);
@@ -57,7 +60,7 @@ void DFAmini::getZeroEquivalent(vector<vector<TokenStateNode> > dfa) {
 }
 
 bool
-DFAmini::isEquivalentStates(vector<vector<TokenStateNode> > dfa, int stateA, int stateB) {
+DFAmini::isEquivalentStates(vector<vector<DFAState> > dfa, int stateA, int stateB) {
     if (dfa[stateA].size() != dfa[stateB].size())
         return false;
 
@@ -99,16 +102,16 @@ bool DFAmini::isInSameClass(int stateA, int stateB) {
     return sameClass;
 }
 
-vector<vector<TokenStateNode> > DFAmini::renameStates(vector<vector<TokenStateNode> > dfa){
-    vector<vector<TokenStateNode> > minimized(0, vector<TokenStateNode>());
+vector<vector<DFAminiState> > DFAmini::renameStates(vector<vector<DFAState> > dfa) {
+    vector<vector<DFAminiState> > minimized(0, vector<DFAminiState>());
     bool nextInput, added;
 
     for (int i = 0; i < dfa.size(); ++i) {
         added = false;
 
         for (int j = 0; !added && j < states.size(); ++j) {
-            if (dfa[i][0].id == states[j][0].id){
-                vector<TokenStateNode> state(1, TokenStateNode(concatenateName(j), states[j][0].isAccepting));
+            if (dfa[i][0].id == states[j][0].id) {
+                vector<DFAminiState> state(1, DFAminiState(concatenateName(j), states[j][0].isAcceptance(), j));
                 minimized.push_back(state);
                 added = true;
             }
@@ -118,8 +121,9 @@ vector<vector<TokenStateNode> > DFAmini::renameStates(vector<vector<TokenStateNo
             nextInput = false;
             for (int j = 0; !nextInput && j < states.size(); ++j) {
                 for (int l = 0; !nextInput && l < states[j].size(); ++l) {
-                    if (dfa[i][k].id == states[j][l].id){
-                        minimized[minimized.size() - 1].push_back(TokenStateNode(concatenateName(j), states[j][l].isAccepting));
+                    if (dfa[i][k].id == states[j][l].id) {
+                        minimized[minimized.size() - 1].push_back(
+                                DFAminiState(concatenateName(j), states[j][l].isAcceptance(), j));
                         nextInput = true;
                     }
                 }
@@ -127,6 +131,7 @@ vector<vector<TokenStateNode> > DFAmini::renameStates(vector<vector<TokenStateNo
         }
 
     }
+    sortDFAmini(&minimized);
     return minimized;
 }
 
@@ -135,15 +140,45 @@ void DFAmini::printMinimizedStates() {
     cout << endl;
     for (int i = 0; i < states.size(); ++i) {
         for (int j = 0; j < states[i].size(); ++j) {
-            cout << states[i][j].stateName << " ";
+            cout << states[i][j].id << " ";
         }
         cout << endl;
     }
 
 }
 
-string DFAmini::concatenateName(int num){
+string DFAmini::concatenateName(int num) {
     std::stringstream ss;
     ss << "S" << num;
     return ss.str();
+}
+
+void DFAmini::sortDFA(vector<vector<DFAState> > *dfa) {
+
+    vector<DFAState> temp;
+    for (int i = 0; i < dfa->size(); ++i) {
+        for (int j = 0; j < dfa->size() - i - 1; ++j) {
+            if ((*dfa)[j][0].id > (*dfa)[j + 1][0].id) {
+                temp = (*dfa)[j];
+                (*dfa)[j] = (*dfa)[j + 1];
+                (*dfa)[j + 1] = temp;
+            }
+        }
+    }
+
+}
+
+void DFAmini::sortDFAmini(vector<vector<DFAminiState> > *dfa) {
+
+    vector<DFAminiState> temp;
+    for (int i = 0; i < dfa->size(); ++i) {
+        for (int j = 0; j < dfa->size() - i - 1; ++j) {
+            if ((*dfa)[j][0].id > (*dfa)[j + 1][0].id) {
+                temp = (*dfa)[j];
+                (*dfa)[j] = (*dfa)[j + 1];
+                (*dfa)[j + 1] = temp;
+            }
+        }
+    }
+
 }

@@ -7,6 +7,8 @@
 
 #include <vector>
 #include "models/TokenStateNode.h"
+#include "models/DFAState.h"
+#include "models/DFAminiState.h"
 
 using namespace std;
 
@@ -14,24 +16,28 @@ class DFAmini {
 
 public:
 
-    DFAmini(): states(2, vector<TokenStateNode>()) {
+    DFAmini(): states(2, vector<DFAState>()) {
 
     }
 
-    vector<vector<TokenStateNode> > getMinimizedDFA(vector<vector<TokenStateNode> > dfa);
+    vector<vector<DFAminiState> > getMinimizedDFA(vector<vector<DFAState> > dfa);
 
     void printMinimizedStates();
 
 private:
-    vector<vector<TokenStateNode> > states;
+    vector<vector<DFAState> > states;
 
-    void getZeroEquivalent(vector<vector<TokenStateNode> > dfa);
+    void sortDFA (vector<vector<DFAState> > *dfa);
 
-    bool isEquivalentStates(vector<vector<TokenStateNode> > dfa, int stateA, int stateB);
+    void sortDFAmini (vector<vector<DFAminiState> > *dfa);
+
+    void getZeroEquivalent(vector<vector<DFAState> > dfa);
+
+    bool isEquivalentStates(vector<vector<DFAState> > dfa, int stateA, int stateB);
 
     bool isInSameClass(int stateA, int stateB);
 
-    vector<vector<TokenStateNode> > renameStates(vector<vector<TokenStateNode> > dfa);
+    vector<vector<DFAminiState> > renameStates(vector<vector<DFAState> > dfa);
 
     string concatenateName(int num);
 
