@@ -33,4 +33,4 @@ add_executable(compiler_generator_master
         DFAmini.h
         main.cpp
         NFABuilder.cpp
-        NFABuilder.h models/FiniteStateTable.cpp models/FiniteStateTable.h DFABuilder.cpp DFABuilder.h models/DFAState.cpp models/DFAState.h Controller.cpp Controller.h)
+        NFABuilder.h models/FiniteStateTable.cpp models/FiniteStateTable.h DFABuilder.cpp DFABuilder.h models/DFAState.cpp models/DFAState.h Controller.cpp Controller.h models/DFAminiState.cpp models/DFAminiState.h)
