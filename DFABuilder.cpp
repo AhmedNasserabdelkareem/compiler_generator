@@ -18,8 +18,8 @@ DFABuilder::DFABuilder(TokenStateNode node, set<char> language): startNFA(node){
 
 void DFABuilder::buildDFA() {
     deque<DFAState *> *dfaStates = new deque<DFAState *>;
-    DFAState *startingDFA =  epsilonClosure(startNFA);
-    dfaStates->insert(dfaStates->begin(), startingDFA);
+    DFAState startingDFA =  epsilonClosure(startNFA);
+    dfaStates->insert(dfaStates->begin(), &startingDFA);
     while (!dfaStates->empty()){
         DFAState *t = dfaStates->front();
         dfaStates->pop_front();
@@ -43,7 +43,7 @@ void DFABuilder::buildDFA() {
 }
 
 //Tested
-DFAState* DFABuilder::epsilonClosure(TokenStateNode n) {
+DFAState DFABuilder::epsilonClosure(TokenStateNode n) {
     deque<TokenStateNode *> q;
     vector<TokenStateNode *> formation;
     formation.push_back(&n);
@@ -60,15 +60,15 @@ DFAState* DFABuilder::epsilonClosure(TokenStateNode n) {
         }
         if(!nodeInVector(formation, u)) formation.push_back(u);
     }
-    DFAState *result = new DFAState(formation, counterDFAStates++);
+    DFAState result(formation, counterDFAStates++);
     return result;
 }
 
 vector<vector<DFAState*> > DFABuilder::getDFA(){
     return Dtrans;
 }
-DFAState* DFABuilder::getDFAInitialNode(){
-    DFAState* x = epsilonClosure(startNFA);
+DFAState DFABuilder::getDFAInitialNode(){
+    DFAState x = epsilonClosure(startNFA);
     return x;
 }
 

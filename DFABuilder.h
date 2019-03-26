@@ -14,7 +14,7 @@ class DFABuilder {
 public:
     DFABuilder(TokenStateNode nfa, set<char>);
     vector<vector<DFAState*> > getDFA();
-    DFAState* getDFAInitialNode();
+    DFAState getDFAInitialNode();
 
 private:
     TokenStateNode startNFA;
@@ -23,7 +23,7 @@ private:
     vector<vector<DFAState*> > Dtrans;
     void buildDFA();
     bool nodeInVector(vector<TokenStateNode *>, TokenStateNode*);
-    DFAState* epsilonClosure(TokenStateNode s);
+    DFAState epsilonClosure(TokenStateNode s);
 
 };
 
