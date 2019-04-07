@@ -14,14 +14,9 @@ void husseinTest();
 int main() {
     string rules = "../input/rules.txt";
     string test = "../input/test.txt";
-//    Controller controller(rules);
-//    controller.start();
-
-
-//    RulesParser parser (rules);
-//    parser.init();
-//
-    sharafTest();
+    Controller controller(rules);
+    controller.start();
+ //   sharafTest();
 
 //    husseinTest();
 
@@ -57,7 +52,7 @@ void husseinTest() {
     vector<vector<DFAState*>> dfa = dfaBuilder->getDFA();
 
 }
-
+/*
 void sharafTest(){
 
     TokenStateNode *tt = new TokenStateNode("A", true);
@@ -128,4 +123,4 @@ void sharafTest(){
         }
         cout << endl;
     }
-}
+}*/

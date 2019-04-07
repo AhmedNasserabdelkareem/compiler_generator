@@ -151,6 +151,8 @@ models/FiniteStateTable.h
 -
 iostream
 -
+regex
+-
 NFABuilder.h
 C:/Users/Ahmed/Desktop/compiler_generator/NFABuilder.h
 

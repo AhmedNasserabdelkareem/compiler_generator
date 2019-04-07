@@ -25,11 +25,10 @@ void NFABuilder::buildNFATree() {
 
     for (const auto &definition : regularDefinitions.definitions) {
 
-        vector<string> factoredDefinition = factorizeDefinition(definition.second,regularDefinitions.definitions);
-cout<<definition.second<<endl;
+        vector<string> factoredDefinition = factorizeDefinition(definition.second,regularExpressions.expressions);
         for (const auto &token:factoredDefinition) {
-cout<<token<<" ";
-            if (!isOperator(token[0])) pushToOperands(token);
+//cout<<token<<" ";
+           if (!isOperator(token[0])) pushToOperands(token);
 
             else if (operatorsStack.empty()) operatorsStack.push(token[0]);
 
@@ -60,7 +59,7 @@ cout<<token<<" ";
         resultOperand.statesDequeue.back()->stateName = definition.first;
 
         initialNode.addNextState(RegularExpressions::LAMBDA, resultOperand.statesDequeue.front());
-        cout<<endl;
+      //  cout<<endl;
     }
 }
 
@@ -185,7 +184,7 @@ void NFABuilder::evaluateNextOperands() {
 
 vector<string> NFABuilder::factorizeDefinition(string x,unordered_map<string,string> definitions) {
     vector<string> pre = StringUtils::split(x,'|');
-    cout<<pre.size();
+    //cout<<pre.size();
     vector<string> res;
     for (int j = 0; j <pre.size() ; j++) {
         string temp = regex_replace(pre[j],regex("\\s"), "");
@@ -193,6 +192,7 @@ vector<string> NFABuilder::factorizeDefinition(string x,unordered_map<string,str
         if(j!=pre.size()-1){
             res.push_back(string(1,'|'));}
     }
+    return res;
 }
 
 /**

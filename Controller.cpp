@@ -15,18 +15,15 @@ Controller::Controller(string x){
 void Controller::start() {
     RulesParser parser(rules);
     parser.init();
-/*   cout<<"EXP"<<r->expressionsRanges.size()<<endl;
-    for (auto& it: r->expressionsRanges) {
-        cout << it.first<<" : "<<it.second<<" "<<endl;
-    }*/
     NFABuilder *nfaBuilder = new NFABuilder(*new RegularDefinitions(parser.getExp()),*new RegularExpressions(parser.getDef()));
-    TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
+    //TODO  NASSER THERE IS A PROBLEM HERE COMMENT TO TEST
+  /*  TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
 
     DFABuilder *dfaBuilder = new DFABuilder(initialNode, nfaBuilder->charactersSet);
     vector<vector<DFAState*>> dfa = dfaBuilder->getDFA();
 
     DFAmini *dfaMini = new DFAmini();
-    dfaMini->getMinimizedDFA(dfa);
+    dfaMini->getMinimizedDFA(dfa);*/
 
 
 }
