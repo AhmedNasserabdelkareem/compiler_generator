@@ -6,6 +6,8 @@
 #define COMPILER_GENERATOR_MASTER_CONTROLLER_H
 
 #include <iostream>
+#include <models/TokenStateNode.h>
+
 using namespace std;
 
 class Controller {
@@ -13,6 +15,7 @@ public:
     Controller(string rules);
     void start();
 
+    void printNodes(TokenStateNode *pNode, unordered_set<int> *visitedStates);
 
 private:
     string rules;
