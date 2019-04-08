@@ -81,19 +81,7 @@ sstream
 /media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/Controller.h
 iostream
 -
-
-/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFABuilder.cpp
-models/DFAState.h
--
-DFABuilder.h
-/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFABuilder.h
-algorithm
--
-deque
--
-models/RegularExpressions.h
--
-stack
+models/TokenStateNode.h
 -
 
 /media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFABuilder.h
