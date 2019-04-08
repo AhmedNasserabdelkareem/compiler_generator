@@ -2,6 +2,7 @@
 // Created by ahmed on 22/03/19.
 //
 
+#include <set>
 #include "DFAState.h"
 DFAState:: DFAState(vector<TokenStateNode> s, int x){
     formingNFAStates = s;
@@ -36,7 +37,15 @@ void DFAState:: unMarkForConversion(){
 
 
 bool DFAState::equals(DFAState *x){
-    return  this->id == x->id;
+    vector<TokenStateNode> formation1 = this->formingNFAStates;
+    vector<TokenStateNode> formation2 = x->formingNFAStates;
+    if(formation1.size() != formation2.size()) return false;
+    std::set<int> cmp;
+    for(int i = 0; i < formation1.size(); i++){
+        cmp.insert(formation1[i].id);
+        cmp.insert(formation2[i].id);
+    }
+    return cmp.size() == formation2.size();
 }
 
 bool DFAState::isAcceptance() {

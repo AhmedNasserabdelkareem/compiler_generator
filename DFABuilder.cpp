@@ -10,7 +10,7 @@
 #include <stack>
 
 
-DFABuilder::DFABuilder(TokenStateNode node, set<char> language): startNFA(node){
+DFABuilder::DFABuilder(TokenStateNode node, set<char> language) : startNFA(node) {
     charactersSet = language;
     counterDFAStates = 0;
     vector<TokenStateNode> formation = epsilonClosure(startNFA);
@@ -23,26 +23,34 @@ void DFABuilder::buildDFA() {
     deque<DFAState *> *dfaStates = new deque<DFAState *>;
 
     dfaStates->insert(dfaStates->begin(), startingDFA);
-    while (!dfaStates->empty()){
+    while (!dfaStates->empty()) {
         DFAState *t = dfaStates->front();
         dfaStates->pop_front();
         t->markForConversion();
-
-        vector<DFAState *> v;
-        for(auto itr = charactersSet.begin(); itr != charactersSet.end(); ++itr){
+        int testFound = findInVector(t, Dtrans);
+        if(testFound != -1){
+            continue;
+        }
+        vector<DFAState> v;
+        v.push_back(*t);
+        for (auto itr = charactersSet.begin(); itr != charactersSet.end(); ++itr) {
             DFAState *u = t->move(*itr, counterDFAStates++);
-            t->addNextState(*itr, u);
-            if( find(dfaStates->begin(), dfaStates->end(), u) == dfaStates->end()){
-                u->unMarkForConversion();
-                dfaStates->insert(dfaStates->begin(), u);
+            //dead state
+            if (u->formingNFAStates.size() == 0) {
+                counterDFAStates--;
+                continue;
             }
+            t->addNextState(*itr, u);
+            u->unMarkForConversion();
+            dfaStates->insert(dfaStates->begin(), u);
+
             //update result dfa
-            v.push_back(u);
+            v.push_back(*u);
         }
         Dtrans.push_back(v);
-        v = vector<DFAState *>(); //for deallocation
+        v = vector<DFAState>(); //for deallocation
     }
-
+    int x = 1;
 }
 
 vector<TokenStateNode> DFABuilder::epsilonClosure(TokenStateNode n) {
@@ -50,32 +58,58 @@ vector<TokenStateNode> DFABuilder::epsilonClosure(TokenStateNode n) {
     vector<TokenStateNode> formation;
     formation.push_back(n);
     vector<TokenStateNode *> initialStates = n.getStatesForCharacter(RegularExpressions::LAMBDA);
-    for(int i = 0; i < initialStates.size(); i++){
+    for (int i = 0; i < initialStates.size(); i++) {
         q.insert(q.begin(), initialStates[i]);
     }
-    while(!q.empty()){
+    while (!q.empty()) {
         TokenStateNode *u = q.front();
         q.pop_front();
         vector<TokenStateNode *> innerETransitions = u->getStatesForCharacter(RegularExpressions::LAMBDA);
-        for(int i = 0; i < innerETransitions.size(); i++){
+        for (int i = 0; i < innerETransitions.size(); i++) {
             q.insert(q.begin(), innerETransitions[i]);
         }
-        if(!nodeInVector(formation, u)) formation.push_back(*u);
+        if (!nodeInVector(formation, u)) formation.push_back(*u);
     }
     return formation;
 }
 
 
-vector<vector<DFAState*> > DFABuilder::getDFA(){
+vector<vector<DFAState> > DFABuilder::getDFA() {
     return Dtrans;
 }
-DFAState DFABuilder::getDFAInitialNode(){
+
+DFAState DFABuilder::getDFAInitialNode() {
     return *startingDFA;
 }
 
-bool DFABuilder::nodeInVector(vector<TokenStateNode> v, TokenStateNode *n){
-    for(int i = 0; i < v.size(); i++){
-        if(n == &v[i]) return true;
+bool DFABuilder::nodeInVector(vector<TokenStateNode> v, TokenStateNode *n) {
+    for (int i = 0; i < v.size(); i++) {
+        if (n == &v[i]) return true;
     }
     return false;
 }
+
+int DFABuilder::findInVector(DFAState *pState, vector<vector<DFAState> > DFAvector) {
+    vector<TokenStateNode> formation = pState->formingNFAStates;
+
+    for (int i = 0; i < DFAvector.size(); i ++) {
+        DFAState iterator = DFAvector[i][0];
+        if (compareVectors(formation, iterator.formingNFAStates)) {
+            return DFAvector[i][0].id;
+        }
+    }
+    return -1;
+}
+
+bool DFABuilder::compareVectors(vector<TokenStateNode> v1, std::vector<TokenStateNode> v2) {
+    if (v1.size() != v2.size()) return false;
+    std::set<int> cmp;
+    for (int i = 0; i < v1.size(); i++) {
+        cmp.insert(v1[i].id);
+    }
+    for (int j = 0; j < v2.size(); j++) {
+        cmp.insert(v2[j].id);
+    }
+    return cmp.size() == v2.size();
+}
+

@@ -18,7 +18,7 @@ public:
 public:
     unordered_map<string, string> definitions;
     static const char KLEENE_CLOSURE = '*', POSITIVE_CLOSURE = '+',
-            UNION = '|', CONCATENATION = 8, OPENING_BRACKET = '(', CLOSING_BRACKET = ')',EXPONENT = 'E',DOT ='.';
+            UNION = '|', CONCATENATION = '&', OPENING_BRACKET = '(', CLOSING_BRACKET = ')',EXPONENT = 'E',DOT ='.';
 
     static const string LAMBDA;
 

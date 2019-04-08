@@ -9,24 +9,29 @@
 #include <models/TokenStateNode.h>
 #include <models/DFAState.h>
 #include <set>
+#include <deque>
+using namespace std;
 
 class DFABuilder {
 public:
     DFABuilder(TokenStateNode nfa, set<char>);
-    vector<vector<DFAState*> > getDFA();
+    vector<vector<DFAState> > getDFA();
     DFAState getDFAInitialNode();
 
 private:
     TokenStateNode startNFA;
     int counterDFAStates;
     set<char> charactersSet;
-    vector<vector<DFAState*> > Dtrans;
+    vector<vector<DFAState> > Dtrans;
     void buildDFA();
     bool nodeInVector(vector<TokenStateNode>, TokenStateNode*);
 //    DFAState epsilonClosure(TokenStateNode s);
     vector<TokenStateNode> epsilonClosure(TokenStateNode n);
     DFAState *startingDFA;
 
+    int findInVector(DFAState *pState, vector<vector<DFAState> > pDeque);
+
+    bool compareVectors(vector<TokenStateNode> vector, std::vector<TokenStateNode> states);
 };
 
 

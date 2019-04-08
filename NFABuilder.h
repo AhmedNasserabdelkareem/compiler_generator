@@ -10,6 +10,7 @@
 #include <models/RegularDefinitions.h>
 #include <models/Keywords.h>
 #include <models/TokenStateNode.h>
+#include <models/FiniteStateTable.h>
 #include <stack>
 #include <set>
 
@@ -36,8 +37,6 @@ private:
 private:
     void buildNFATree();
 
-    vector<string> factorizeDefinition(string regularDefinition);
-
     bool isLeftParenthesis(const char &character);
 
     bool isRightParenthesis(const char &character);
@@ -47,6 +46,26 @@ private:
     bool isOperator(const char &operatorChar);
 
     void pushToOperands(const string &regex);
+
+    char getChar(char x);
+
+    bool checkKeys(unordered_map<string, string> definitions, string x);
+
+    vector<string> factorizeDefinition(string x, unordered_map<string, string> definitions);
+
+    void evaluateNextOperands();
+
+    void concatenateOperands();
+
+    void kleeneClosureOperand();
+
+    void positiveClosureOperand();
+
+    void unionOperands();
+
+    bool isarithmetic(char x);
+
+    vector<string> tokenize(string x,unordered_map<string,string> definitions, vector<string> result);
 };
 
 

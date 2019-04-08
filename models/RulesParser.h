@@ -18,6 +18,15 @@ public:
     RulesParser(string input);
     vector<string> lines;
     unordered_map<string, string> def;
+
+    const unordered_map<string, string> &getDef() const;
+
+    const unordered_map<string, string> &getExp() const;
+
+    const unordered_set<string> &getPunc() const;
+
+    const unordered_set<string> &getKeywrds() const;
+
     unordered_map<string, string> exp;
     unordered_set<string> punc;
     unordered_set<string> keywrds;

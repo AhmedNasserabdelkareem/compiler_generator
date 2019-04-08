@@ -15,15 +15,15 @@ Controller::Controller(string x){
 void Controller::start() {
     RulesParser parser(rules);
     parser.init();
-
-    NFABuilder *nfaBuilder = new NFABuilder(new RegularDefinitions(),new RegularExpressions());
-    TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
+    NFABuilder *nfaBuilder = new NFABuilder(*new RegularDefinitions(parser.getExp()),*new RegularExpressions(parser.getDef()));
+    //TODO  NASSER THERE IS A PROBLEM HERE COMMENT TO TEST
+  /*  TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
 
     DFABuilder *dfaBuilder = new DFABuilder(initialNode, nfaBuilder->charactersSet);
     vector<vector<DFAState*>> dfa = dfaBuilder->getDFA();
 
     DFAmini *dfaMini = new DFAmini();
-    dfaMini->getMinimizedDFA(dfa);
+    dfaMini->getMinimizedDFA(dfa);*/
 
 
 }
