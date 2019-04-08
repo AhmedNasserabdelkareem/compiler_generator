@@ -66,6 +66,7 @@ private:
     bool isarithmetic(char x);
 
     vector<string> tokenize(string x,unordered_map<string,string> definitions, vector<string> result);
+
 };
 
 

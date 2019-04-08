@@ -90,13 +90,43 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/Controller.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/Controller.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFABuilder.cpp">
 			<Option target="compiler_generator_master"/>
 		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFABuilder.h">
 			<Option target="compiler_generator_master"/>
 		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFAmini.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/DFAmini.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/NFABuilder.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/NFABuilder.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/input/rules.txt">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/input/test.txt">
+			<Option target="compiler_generator_master"/>
+		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/main.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/ArithmeticOperators.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/ArithmeticOperators.h">
 			<Option target="compiler_generator_master"/>
 		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/DFAState.cpp">
@@ -105,10 +135,67 @@
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/DFAState.h">
 			<Option target="compiler_generator_master"/>
 		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/DFAminiState.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/DFAminiState.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/FiniteStateTable.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/FiniteStateTable.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/Keywords.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/Keywords.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/Punctuations.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/Punctuations.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RegularDefinitions.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RegularDefinitions.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RegularExpressions.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RegularExpressions.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RelationalOperators.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RelationalOperators.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RulesParser.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/RulesParser.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/TokenStateNode.cpp">
 			<Option target="compiler_generator_master"/>
 		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/TokenStateNode.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/models/Types.h">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/utils/StringUtils.cpp">
+			<Option target="compiler_generator_master"/>
+		</Unit>
+		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/utils/StringUtils.h">
 			<Option target="compiler_generator_master"/>
 		</Unit>
 		<Unit filename="/media/ahmed/01D1FA1CE1F1E610/CSED/2nd semester/Compilers/compiler_generator/CMakeLists.txt">

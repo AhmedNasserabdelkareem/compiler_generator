@@ -3,21 +3,20 @@
 //
 
 #include <models/FiniteStateTable.h>
-#include <iostream>
 #include <regex>
 #include "NFABuilder.h"
 
 NFABuilder::NFABuilder(const RegularDefinitions &regularDefinitions, const RegularExpressions &regularExpressions)
         : regularDefinitions(regularDefinitions), regularExpressions(regularExpressions) {
- /*   cout<<"EXP"<<regularExpressions.expressions.size()<<endl;
-    for (auto& it: regularExpressions.expressions) {
-        cout << it.first<<" : "<<it.second<<" "<<endl;
-    }
-    cout<<"**********************"<<endl;
-    cout<<"DEF"<<regularDefinitions.definitions.size()<<endl;
-    for (auto& it: regularDefinitions.definitions) {
-        cout << it.first<<" : "<<it.second<<" "<<endl;
-    }*/
+    /*   cout<<"EXP"<<regularExpressions.expressions.size()<<endl;
+       for (auto& it: regularExpressions.expressions) {
+           cout << it.first<<" : "<<it.second<<" "<<endl;
+       }
+       cout<<"**********************"<<endl;
+       cout<<"DEF"<<regularDefinitions.definitions.size()<<endl;
+       for (auto& it: regularDefinitions.definitions) {
+           cout << it.first<<" : "<<it.second<<" "<<endl;
+       }*/
     buildNFATree();
 }
 
@@ -25,10 +24,10 @@ void NFABuilder::buildNFATree() {
 
     for (const auto &definition : regularDefinitions.definitions) {
 
-        vector<string> factoredDefinition = factorizeDefinition(definition.second,regularExpressions.expressions);
+        vector<string> factoredDefinition = factorizeDefinition(definition.second, regularExpressions.expressions);
         for (const auto &token:factoredDefinition) {
-//cout<<token<<" ";
-           if (!isOperator(token[0])) pushToOperands(token);
+
+            if (!isOperator(token[0]) || (isOperator(token[0]) && operandsStack.empty())) pushToOperands(token);
 
             else if (operatorsStack.empty()) operatorsStack.push(token[0]);
 
@@ -59,7 +58,9 @@ void NFABuilder::buildNFATree() {
         resultOperand.statesDequeue.back()->stateName = definition.first;
 
         initialNode.addNextState(RegularExpressions::LAMBDA, resultOperand.statesDequeue.front());
-      //  cout<<endl;
+
+
+        //  cout<<endl;
     }
 }
 
@@ -182,15 +183,16 @@ void NFABuilder::evaluateNextOperands() {
 }
 
 
-vector<string> NFABuilder::factorizeDefinition(string x,unordered_map<string,string> definitions) {
-    vector<string> pre = StringUtils::split(x,'|');
+vector<string> NFABuilder::factorizeDefinition(string x, unordered_map<string, string> definitions) {
+    vector<string> pre = StringUtils::split(x, '|');
     //cout<<pre.size();
     vector<string> res;
-    for (int j = 0; j <pre.size() ; j++) {
-        string temp = regex_replace(pre[j],regex("\\s"), "");
-        res= tokenize(temp,definitions,res);
-        if(j!=pre.size()-1){
-            res.push_back(string(1,'|'));}
+    for (int j = 0; j < pre.size(); j++) {
+        string temp = regex_replace(pre[j], regex("\\s"), "");
+        res = tokenize(temp, definitions, res);
+        if (j != pre.size() - 1) {
+            res.push_back(string(1, '|'));
+        }
     }
     return res;
 }
@@ -243,7 +245,7 @@ bool NFABuilder::checkKeys(unordered_map<string, string> definitions, string x) 
 }
 
 char NFABuilder::getChar(char x) {
-    switch (x){
+    switch (x) {
         case '*':
             return RegularDefinitions::KLEENE_CLOSURE;
         case '+':
@@ -262,70 +264,71 @@ char NFABuilder::getChar(char x) {
 }
 
 bool NFABuilder::isarithmetic(char x) {
-    if(x=='='||x=='>'||x=='<'||x=='!'||x=='\\'||x=='-'||x=='/'){
+    if (x == '=' || x == '>' || x == '<' || x == '!' || x == '\\' || x == '-' || x == '/') {
         return true;
     }
     return false;
 }
 
-vector<string> NFABuilder::tokenize(string x,unordered_map<string,string> definitions, vector<string> result) {
-    int i=0;
-    string temp="";
-    while(i<x.size()){
+vector<string> NFABuilder::tokenize(string x, unordered_map<string, string> definitions, vector<string> result) {
+    int i = 0;
+    string temp = "";
+    while (i < x.size()) {
         char tmp = x[i];
-        if(x[i]==' '){
+        if (x[i] == ' ') {
             i++;
             continue;
         }
-        if(isalpha(x[i])&&x[i]!='E'&&x[i]!='L'){
-            while(isalpha(x[i])){
-                temp+=x[i];
-                if(checkKeys(definitions,temp)){
+        if (isalpha(x[i]) && x[i] != 'E' && x[i] != 'L') {
+            while (isalpha(x[i])) {
+                temp += x[i];
+                if (checkKeys(definitions, temp)) {
                     result.push_back(temp);
                     i++;
                     break;
-                }else{
+                } else {
 
                 }
                 i++;
             }
             //  cout<<temp<<endl;
-            temp="";
+            temp = "";
         }
-        if(x[i]=='+'||x[i]=='*'||x[i]=='|'||x[i]=='.'||x[i]=='('||x[i]==')'||x[i]=='E'){
-            if(x[i]=='E'){
-                result.push_back(string(1,getChar(x[i])));
-                result.push_back(string(1,RegularDefinitions::CONCATENATION));
-            } else if(x[i]=='('){
-                result.push_back(string(1,RegularDefinitions::CONCATENATION));
-                result.push_back(string(1,getChar(x[i])));
-            } else if(x[i]==')' && i!=(x.size()-1)&&x[i+1]!='+'&&x[i+1]!='*'){
-                result.push_back(string(1,getChar(x[i])));
-                result.push_back(string(1,RegularDefinitions::CONCATENATION));
-            }else if(x[i]=='.'){
-                result.push_back(string(1,RegularDefinitions::CONCATENATION));
-                result.push_back(string(1,getChar(x[i])));
-                result.push_back(string(1,RegularDefinitions::CONCATENATION));
-            }else {
+        if (x[i] == '+' || x[i] == '*' || x[i] == '|' || x[i] == '.' || x[i] == '(' || x[i] == ')' || x[i] == 'E') {
+            if (x[i] == 'E') {
+                result.push_back(string(1, getChar(x[i])));
+                result.push_back(string(1, RegularDefinitions::CONCATENATION));
+            } else if (x[i] == '(') {
+                result.push_back(string(1, RegularDefinitions::CONCATENATION));
+                result.push_back(string(1, getChar(x[i])));
+            } else if (x[i] == ')' && i != (x.size() - 1) && x[i + 1] != '+' && x[i + 1] != '*') {
+                result.push_back(string(1, getChar(x[i])));
+                result.push_back(string(1, RegularDefinitions::CONCATENATION));
+            } else if (x[i] == '.') {
+                result.push_back(string(1, RegularDefinitions::CONCATENATION));
+                result.push_back(string(1, getChar(x[i])));
+                result.push_back(string(1, RegularDefinitions::CONCATENATION));
+            } else {
                 result.push_back(string(1, getChar(x[i])));
             }
             i++;
             continue;
         }
-        if(x[i]=='\\'&&x[i+1]=='L'){
-            string temp = x.substr(i,2);
+        if (x[i] == '\\' && x[i + 1] == 'L') {
+            string temp = x.substr(i, 2);
             result.push_back(RegularDefinitions::LAMBDA);
-            i+=2;
+            i += 2;
             continue;
         }
-        if(isarithmetic(x[i])&&x[i]!='\\'){
-            while (isarithmetic(x[i])){
-                if(x[i]!='\\'){
-                    temp+=x[i];}
+        if (isarithmetic(x[i]) && x[i] != '\\') {
+            while (isarithmetic(x[i])) {
+                if (x[i] != '\\') {
+                    temp += x[i];
+                }
                 i++;
             }
             result.push_back(temp);
-            temp="";
+            temp = "";
             i--;
         }
         i++;

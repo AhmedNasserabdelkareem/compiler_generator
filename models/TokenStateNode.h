@@ -35,9 +35,9 @@ public:
     int id = DEFAULT_ID;
     bool isAccepting = DEFAULT_ACCEPTING;
     string stateName = INVALID_STATE; //Equivalent to the definition name when it's an accepting state
+    unordered_map<char, vector<TokenStateNode *>> nextStates;
 
 private:
-    unordered_map<char, vector<TokenStateNode *>> nextStates;
     static int staticID;
 };
 

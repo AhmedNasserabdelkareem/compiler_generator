@@ -123,6 +123,33 @@ compiler_generator_master/fast:
 	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/build
 .PHONY : compiler_generator_master/fast
 
+Controller.o: Controller.cpp.o
+
+.PHONY : Controller.o
+
+# target to build an object file
+Controller.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.o
+.PHONY : Controller.cpp.o
+
+Controller.i: Controller.cpp.i
+
+.PHONY : Controller.i
+
+# target to preprocess a source file
+Controller.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.i
+.PHONY : Controller.cpp.i
+
+Controller.s: Controller.cpp.s
+
+.PHONY : Controller.s
+
+# target to generate assembly for a file
+Controller.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/Controller.cpp.s
+.PHONY : Controller.cpp.s
+
 DFABuilder.o: DFABuilder.cpp.o
 
 .PHONY : DFABuilder.o
@@ -149,6 +176,60 @@ DFABuilder.s: DFABuilder.cpp.s
 DFABuilder.cpp.s:
 	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/DFABuilder.cpp.s
 .PHONY : DFABuilder.cpp.s
+
+DFAmini.o: DFAmini.cpp.o
+
+.PHONY : DFAmini.o
+
+# target to build an object file
+DFAmini.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/DFAmini.cpp.o
+.PHONY : DFAmini.cpp.o
+
+DFAmini.i: DFAmini.cpp.i
+
+.PHONY : DFAmini.i
+
+# target to preprocess a source file
+DFAmini.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/DFAmini.cpp.i
+.PHONY : DFAmini.cpp.i
+
+DFAmini.s: DFAmini.cpp.s
+
+.PHONY : DFAmini.s
+
+# target to generate assembly for a file
+DFAmini.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/DFAmini.cpp.s
+.PHONY : DFAmini.cpp.s
+
+NFABuilder.o: NFABuilder.cpp.o
+
+.PHONY : NFABuilder.o
+
+# target to build an object file
+NFABuilder.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.o
+.PHONY : NFABuilder.cpp.o
+
+NFABuilder.i: NFABuilder.cpp.i
+
+.PHONY : NFABuilder.i
+
+# target to preprocess a source file
+NFABuilder.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.i
+.PHONY : NFABuilder.cpp.i
+
+NFABuilder.s: NFABuilder.cpp.s
+
+.PHONY : NFABuilder.s
+
+# target to generate assembly for a file
+NFABuilder.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/NFABuilder.cpp.s
+.PHONY : NFABuilder.cpp.s
 
 main.o: main.cpp.o
 
@@ -177,6 +258,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+models/ArithmeticOperators.o: models/ArithmeticOperators.cpp.o
+
+.PHONY : models/ArithmeticOperators.o
+
+# target to build an object file
+models/ArithmeticOperators.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.o
+.PHONY : models/ArithmeticOperators.cpp.o
+
+models/ArithmeticOperators.i: models/ArithmeticOperators.cpp.i
+
+.PHONY : models/ArithmeticOperators.i
+
+# target to preprocess a source file
+models/ArithmeticOperators.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.i
+.PHONY : models/ArithmeticOperators.cpp.i
+
+models/ArithmeticOperators.s: models/ArithmeticOperators.cpp.s
+
+.PHONY : models/ArithmeticOperators.s
+
+# target to generate assembly for a file
+models/ArithmeticOperators.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/ArithmeticOperators.cpp.s
+.PHONY : models/ArithmeticOperators.cpp.s
+
 models/DFAState.o: models/DFAState.cpp.o
 
 .PHONY : models/DFAState.o
@@ -203,6 +311,222 @@ models/DFAState.s: models/DFAState.cpp.s
 models/DFAState.cpp.s:
 	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/DFAState.cpp.s
 .PHONY : models/DFAState.cpp.s
+
+models/DFAminiState.o: models/DFAminiState.cpp.o
+
+.PHONY : models/DFAminiState.o
+
+# target to build an object file
+models/DFAminiState.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.o
+.PHONY : models/DFAminiState.cpp.o
+
+models/DFAminiState.i: models/DFAminiState.cpp.i
+
+.PHONY : models/DFAminiState.i
+
+# target to preprocess a source file
+models/DFAminiState.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.i
+.PHONY : models/DFAminiState.cpp.i
+
+models/DFAminiState.s: models/DFAminiState.cpp.s
+
+.PHONY : models/DFAminiState.s
+
+# target to generate assembly for a file
+models/DFAminiState.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/DFAminiState.cpp.s
+.PHONY : models/DFAminiState.cpp.s
+
+models/FiniteStateTable.o: models/FiniteStateTable.cpp.o
+
+.PHONY : models/FiniteStateTable.o
+
+# target to build an object file
+models/FiniteStateTable.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.o
+.PHONY : models/FiniteStateTable.cpp.o
+
+models/FiniteStateTable.i: models/FiniteStateTable.cpp.i
+
+.PHONY : models/FiniteStateTable.i
+
+# target to preprocess a source file
+models/FiniteStateTable.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.i
+.PHONY : models/FiniteStateTable.cpp.i
+
+models/FiniteStateTable.s: models/FiniteStateTable.cpp.s
+
+.PHONY : models/FiniteStateTable.s
+
+# target to generate assembly for a file
+models/FiniteStateTable.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/FiniteStateTable.cpp.s
+.PHONY : models/FiniteStateTable.cpp.s
+
+models/Keywords.o: models/Keywords.cpp.o
+
+.PHONY : models/Keywords.o
+
+# target to build an object file
+models/Keywords.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/Keywords.cpp.o
+.PHONY : models/Keywords.cpp.o
+
+models/Keywords.i: models/Keywords.cpp.i
+
+.PHONY : models/Keywords.i
+
+# target to preprocess a source file
+models/Keywords.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/Keywords.cpp.i
+.PHONY : models/Keywords.cpp.i
+
+models/Keywords.s: models/Keywords.cpp.s
+
+.PHONY : models/Keywords.s
+
+# target to generate assembly for a file
+models/Keywords.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/Keywords.cpp.s
+.PHONY : models/Keywords.cpp.s
+
+models/Punctuations.o: models/Punctuations.cpp.o
+
+.PHONY : models/Punctuations.o
+
+# target to build an object file
+models/Punctuations.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/Punctuations.cpp.o
+.PHONY : models/Punctuations.cpp.o
+
+models/Punctuations.i: models/Punctuations.cpp.i
+
+.PHONY : models/Punctuations.i
+
+# target to preprocess a source file
+models/Punctuations.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/Punctuations.cpp.i
+.PHONY : models/Punctuations.cpp.i
+
+models/Punctuations.s: models/Punctuations.cpp.s
+
+.PHONY : models/Punctuations.s
+
+# target to generate assembly for a file
+models/Punctuations.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/Punctuations.cpp.s
+.PHONY : models/Punctuations.cpp.s
+
+models/RegularDefinitions.o: models/RegularDefinitions.cpp.o
+
+.PHONY : models/RegularDefinitions.o
+
+# target to build an object file
+models/RegularDefinitions.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RegularDefinitions.cpp.o
+.PHONY : models/RegularDefinitions.cpp.o
+
+models/RegularDefinitions.i: models/RegularDefinitions.cpp.i
+
+.PHONY : models/RegularDefinitions.i
+
+# target to preprocess a source file
+models/RegularDefinitions.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RegularDefinitions.cpp.i
+.PHONY : models/RegularDefinitions.cpp.i
+
+models/RegularDefinitions.s: models/RegularDefinitions.cpp.s
+
+.PHONY : models/RegularDefinitions.s
+
+# target to generate assembly for a file
+models/RegularDefinitions.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RegularDefinitions.cpp.s
+.PHONY : models/RegularDefinitions.cpp.s
+
+models/RegularExpressions.o: models/RegularExpressions.cpp.o
+
+.PHONY : models/RegularExpressions.o
+
+# target to build an object file
+models/RegularExpressions.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RegularExpressions.cpp.o
+.PHONY : models/RegularExpressions.cpp.o
+
+models/RegularExpressions.i: models/RegularExpressions.cpp.i
+
+.PHONY : models/RegularExpressions.i
+
+# target to preprocess a source file
+models/RegularExpressions.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RegularExpressions.cpp.i
+.PHONY : models/RegularExpressions.cpp.i
+
+models/RegularExpressions.s: models/RegularExpressions.cpp.s
+
+.PHONY : models/RegularExpressions.s
+
+# target to generate assembly for a file
+models/RegularExpressions.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RegularExpressions.cpp.s
+.PHONY : models/RegularExpressions.cpp.s
+
+models/RelationalOperators.o: models/RelationalOperators.cpp.o
+
+.PHONY : models/RelationalOperators.o
+
+# target to build an object file
+models/RelationalOperators.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RelationalOperators.cpp.o
+.PHONY : models/RelationalOperators.cpp.o
+
+models/RelationalOperators.i: models/RelationalOperators.cpp.i
+
+.PHONY : models/RelationalOperators.i
+
+# target to preprocess a source file
+models/RelationalOperators.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RelationalOperators.cpp.i
+.PHONY : models/RelationalOperators.cpp.i
+
+models/RelationalOperators.s: models/RelationalOperators.cpp.s
+
+.PHONY : models/RelationalOperators.s
+
+# target to generate assembly for a file
+models/RelationalOperators.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RelationalOperators.cpp.s
+.PHONY : models/RelationalOperators.cpp.s
+
+models/RulesParser.o: models/RulesParser.cpp.o
+
+.PHONY : models/RulesParser.o
+
+# target to build an object file
+models/RulesParser.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RulesParser.cpp.o
+.PHONY : models/RulesParser.cpp.o
+
+models/RulesParser.i: models/RulesParser.cpp.i
+
+.PHONY : models/RulesParser.i
+
+# target to preprocess a source file
+models/RulesParser.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RulesParser.cpp.i
+.PHONY : models/RulesParser.cpp.i
+
+models/RulesParser.s: models/RulesParser.cpp.s
+
+.PHONY : models/RulesParser.s
+
+# target to generate assembly for a file
+models/RulesParser.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/RulesParser.cpp.s
+.PHONY : models/RulesParser.cpp.s
 
 models/TokenStateNode.o: models/TokenStateNode.cpp.o
 
@@ -231,6 +555,33 @@ models/TokenStateNode.cpp.s:
 	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/models/TokenStateNode.cpp.s
 .PHONY : models/TokenStateNode.cpp.s
 
+utils/StringUtils.o: utils/StringUtils.cpp.o
+
+.PHONY : utils/StringUtils.o
+
+# target to build an object file
+utils/StringUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/utils/StringUtils.cpp.o
+.PHONY : utils/StringUtils.cpp.o
+
+utils/StringUtils.i: utils/StringUtils.cpp.i
+
+.PHONY : utils/StringUtils.i
+
+# target to preprocess a source file
+utils/StringUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/utils/StringUtils.cpp.i
+.PHONY : utils/StringUtils.cpp.i
+
+utils/StringUtils.s: utils/StringUtils.cpp.s
+
+.PHONY : utils/StringUtils.s
+
+# target to generate assembly for a file
+utils/StringUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/compiler_generator_master.dir/build.make CMakeFiles/compiler_generator_master.dir/utils/StringUtils.cpp.s
+.PHONY : utils/StringUtils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,18 +591,57 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... compiler_generator_master"
+	@echo "... Controller.o"
+	@echo "... Controller.i"
+	@echo "... Controller.s"
 	@echo "... DFABuilder.o"
 	@echo "... DFABuilder.i"
 	@echo "... DFABuilder.s"
+	@echo "... DFAmini.o"
+	@echo "... DFAmini.i"
+	@echo "... DFAmini.s"
+	@echo "... NFABuilder.o"
+	@echo "... NFABuilder.i"
+	@echo "... NFABuilder.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... models/ArithmeticOperators.o"
+	@echo "... models/ArithmeticOperators.i"
+	@echo "... models/ArithmeticOperators.s"
 	@echo "... models/DFAState.o"
 	@echo "... models/DFAState.i"
 	@echo "... models/DFAState.s"
+	@echo "... models/DFAminiState.o"
+	@echo "... models/DFAminiState.i"
+	@echo "... models/DFAminiState.s"
+	@echo "... models/FiniteStateTable.o"
+	@echo "... models/FiniteStateTable.i"
+	@echo "... models/FiniteStateTable.s"
+	@echo "... models/Keywords.o"
+	@echo "... models/Keywords.i"
+	@echo "... models/Keywords.s"
+	@echo "... models/Punctuations.o"
+	@echo "... models/Punctuations.i"
+	@echo "... models/Punctuations.s"
+	@echo "... models/RegularDefinitions.o"
+	@echo "... models/RegularDefinitions.i"
+	@echo "... models/RegularDefinitions.s"
+	@echo "... models/RegularExpressions.o"
+	@echo "... models/RegularExpressions.i"
+	@echo "... models/RegularExpressions.s"
+	@echo "... models/RelationalOperators.o"
+	@echo "... models/RelationalOperators.i"
+	@echo "... models/RelationalOperators.s"
+	@echo "... models/RulesParser.o"
+	@echo "... models/RulesParser.i"
+	@echo "... models/RulesParser.s"
 	@echo "... models/TokenStateNode.o"
 	@echo "... models/TokenStateNode.i"
 	@echo "... models/TokenStateNode.s"
+	@echo "... utils/StringUtils.o"
+	@echo "... utils/StringUtils.i"
+	@echo "... utils/StringUtils.s"
 .PHONY : help
 
 
