@@ -1,6 +1,6 @@
 #include <utility>
 
-#include <utility>
+#include <iostream>
 
 //
 // Created by sharaf on 08/04/2019.
@@ -11,11 +11,11 @@
 TokenGenerator::TokenGenerator(vector<vector<DFAminiState> > minimizedDfa, set<char> inputs) : minimizedDfa(
         std::move(minimizedDfa)), inputs(std::move(inputs)) {};
 
-vector<string> TokenGenerator::generateTokens(ifstream file) {
+/*vector<string> TokenGenerator::generateTokens(ifstream file) {
     string inputStream((std::istreambuf_iterator<char>(file)),
                std::istreambuf_iterator<char>());
     return generateTokens(inputStream);
-}
+}*/
 
 vector<string> TokenGenerator::generateTokens(string inputStream) {
     vector<string> tokens;
@@ -43,6 +43,7 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
             //input dosen't exist
         } else {
             tempState = &minimizedDfa[crrentStateId][inputIndex + 1];
+            crrentStateId = tempState->id;
             if (tempState->isAccepting) {
                 lastAcceptingState = tempState;
                 lastAcceptingInput = i;
@@ -61,7 +62,8 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
 bool TokenGenerator::getToken(vector<string> &tokens, int lastAcceptingInput, DFAminiState *&lastAcceptingState,
                               int &crrentStateId, int &i) const {
     if (lastAcceptingState != nullptr) {
-        tokens.push_back(lastAcceptingState->stateName);
+        tokens.push_back(lastAcceptingState->token);
+        //cout<<lastAcceptingState->token;
         i = lastAcceptingInput;
         lastAcceptingState = nullptr;
         crrentStateId = STARTING_STATE_ID;

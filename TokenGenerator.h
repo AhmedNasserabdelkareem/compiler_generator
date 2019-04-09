@@ -4,6 +4,7 @@
 
 #ifndef COMPILER_GENERATOR_MASTER_TOKENGENERATOR_H
 #define COMPILER_GENERATOR_MASTER_TOKENGENERATOR_H
+
 #include <vector>
 
 #include <models/DFAminiState.h>
@@ -16,15 +17,16 @@
 
 class TokenGenerator {
 public:
-    TokenGenerator (vector<vector<DFAminiState> > minimizedDfa, set<char> inputs);
+    TokenGenerator(vector<vector<DFAminiState> > minimizedDfa, set<char> inputs);
 
-    vector<string> generateTokens(ifstream file);
-
+//    vector<string> generateTokens(ifstream file);
     vector<string> generateTokens(string inputStream);
+
 
 private:
     vector<vector<DFAminiState> > minimizedDfa;
     set<char> inputs;
+
 
     bool
     getToken(vector<string> &tokens, int lastAcceptingInput, DFAminiState *&lastAcceptingState, int &crrentStateId,

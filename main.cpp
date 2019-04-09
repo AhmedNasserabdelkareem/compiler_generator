@@ -14,11 +14,9 @@ void husseinTest();
 int main() {
     string rules = "../input/rules.txt";
     string test = "../input/test.txt";
-//    Controller controller(rules);
-//    controller.start();
- //   sharafTest();
-
-    husseinTest();
+    Controller controller(rules);
+    controller.start();
+//    husseinTest();
 
     return 0;
 }
@@ -33,7 +31,7 @@ void husseinTest() {
 
     a.addNextState('x', &b);
     a.addNextState('x', &a);
-    a.addNextState('y', &a);
+    a.addNextState('y', &c);
     b.addNextState('x', &c);
 
 

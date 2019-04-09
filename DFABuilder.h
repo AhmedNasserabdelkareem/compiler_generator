@@ -32,6 +32,12 @@ private:
     int findInVector(DFAState *pState, vector<vector<DFAState> > pDeque);
 
     bool compareVectors(vector<TokenStateNode> vector, std::vector<TokenStateNode> states);
+
+    vector<vector<DFAState>> normalizeDFAStates(vector<vector<DFAState>> vector);
+
+    void printDFAStates(vector<vector<DFAState>> vector);
+
+    void printAcceptance(vector<vector<DFAState>> vector);
 };
 
 

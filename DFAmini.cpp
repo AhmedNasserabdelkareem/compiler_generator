@@ -3,14 +3,13 @@
 //
 
 #include <sstream>
-#include <iostream>
 #include <models/DFAState.h>
 #include <models/DFAminiState.h>
 #include "DFAmini.h"
 
 vector<vector<DFAminiState> > DFAmini::getMinimizedDFA(vector<vector<DFAState> > dfa) {
 
-    sortDFA(&dfa);
+    //sortDFA(&dfa);
     getZeroEquivalent(dfa);
     vector<vector<DFAState> > newStates = states;
     bool stateAdded;
@@ -20,7 +19,9 @@ vector<vector<DFAminiState> > DFAmini::getMinimizedDFA(vector<vector<DFAState> >
         newStates.clear();
         for (int i = 0; i < states.size(); ++i) {
 
-            if (states[i].size() == 1) {//class has only one state so add it to newStates immediately
+            if (states[i].size() == 0) {
+                continue;
+            } else if (states[i].size() == 1) {//class has only one state so add it to newStates immediately
                 newStates.push_back(states[i]);
             } else {
                 vector<DFAState> firstState(1, states[i][0]);
@@ -49,8 +50,8 @@ vector<vector<DFAminiState> > DFAmini::getMinimizedDFA(vector<vector<DFAState> >
 }
 
 void DFAmini::getZeroEquivalent(vector<vector<DFAState> > dfa) {
-
     for (int i = 0; i < dfa.size(); ++i) {
+        //cout << dfa[i][0].isAcceptance();
         if (!dfa[i][0].isAcceptance())
             states[0].push_back(dfa[i][0]);
         else
@@ -111,7 +112,8 @@ vector<vector<DFAminiState> > DFAmini::renameStates(vector<vector<DFAState> > df
 
         for (int j = 0; !added && j < states.size(); ++j) {
             if (dfa[i][0].id == states[j][0].id) {
-                vector<DFAminiState> state(1, DFAminiState(concatenateName(j), states[j][0].isAcceptance(), j));
+                vector<DFAminiState> state(1, DFAminiState(concatenateName(j), states[j][0].isAcceptance(), j,
+                                                           states[j][0].getToken()));
                 minimized.push_back(state);
                 added = true;
             }
@@ -123,7 +125,8 @@ vector<vector<DFAminiState> > DFAmini::renameStates(vector<vector<DFAState> > df
                 for (int l = 0; !nextInput && l < states[j].size(); ++l) {
                     if (dfa[i][k].id == states[j][l].id) {
                         minimized[minimized.size() - 1].push_back(
-                                DFAminiState(concatenateName(j), states[j][l].isAcceptance(), j));
+                                DFAminiState(concatenateName(j), states[j][l].isAcceptance(), j,
+                                             states[j][l].getToken()));
                         nextInput = true;
                     }
                 }

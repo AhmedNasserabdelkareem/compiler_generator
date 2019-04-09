@@ -19,6 +19,8 @@ public:
 
 private:
     string rules;
+
+    void printAcceptingStates(TokenStateNode *node, unordered_set<int> *pSet);
 };
 
 

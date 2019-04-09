@@ -4,8 +4,6 @@
 
 #include <models/DFAState.h>
 #include "DFABuilder.h"
-#include <algorithm>
-#include <deque>
 #include <models/RegularExpressions.h>
 #include <stack>
 
@@ -38,6 +36,9 @@ void DFABuilder::buildDFA() {
             //dead state
             if (u->formingNFAStates.size() == 0) {
                 counterDFAStates--;
+                vector<TokenStateNode> deadFormation;
+                DFAState *deadState = new DFAState(deadFormation, -1);
+                v.push_back(*deadState);
                 continue;
             }
             t->addNextState(*itr, u);
@@ -50,7 +51,9 @@ void DFABuilder::buildDFA() {
         Dtrans.push_back(v);
         v = vector<DFAState>(); //for deallocation
     }
-    int x = 1;
+    Dtrans = normalizeDFAStates(Dtrans);
+//    printAcceptance(Dtrans);
+//    printDFAStates(Dtrans);
 }
 
 vector<TokenStateNode> DFABuilder::epsilonClosure(TokenStateNode n) {
@@ -112,4 +115,50 @@ bool DFABuilder::compareVectors(vector<TokenStateNode> v1, std::vector<TokenStat
     }
     return cmp.size() == v2.size();
 }
+
+vector<vector<DFAState>> DFABuilder::normalizeDFAStates(vector<vector<DFAState>> dfa) {
+    for (int i = 0; i < dfa.size(); i++) {
+        dfa[i][0].id = i;
+        for (int j = 0; j < dfa.size(); j++) {
+            for (int k = 1; k < dfa[j].size(); k++) {
+                if (dfa[i][0].equals(&dfa[j][k])) {
+                    dfa[j][k].id = i;
+                }
+            }
+        }
+    }
+    return dfa;
+}
+
+//void DFABuilder::printDFAStates(vector<vector<DFAState>> vector) {
+//    for(int i = 0; i < vector.size(); i++){
+//        for(int j = 0; j < vector[i].size(); j++){
+//            for(int k = 0; k < vector[i][j].formingNFAStates.size(); k++){
+//                cout << vector[i][j].formingNFAStates[k].stateName;
+//            }
+//            cout << " ";
+//        }
+//        cout << endl;
+//    }
+//}
+
+void DFABuilder::printDFAStates(vector<vector<DFAState>> vector) {
+    for (int i = 0; i < vector.size(); i++) {
+        for (int j = 0; j < vector[i].size(); j++) {
+            cout << vector[i][j].id << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+void DFABuilder::printAcceptance(vector<vector<DFAState>> vector) {
+    for (int i = 0; i < vector.size(); i++) {
+        if (vector[i][0].isAcceptance()) {
+            cout << vector[i][0].id << endl;
+        }
+    }
+}
+
+
 

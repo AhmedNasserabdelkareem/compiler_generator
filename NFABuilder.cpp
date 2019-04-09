@@ -17,6 +17,10 @@ NFABuilder::NFABuilder(const RegularDefinitions &regularDefinitions, const Regul
        for (auto& it: regularDefinitions.definitions) {
            cout << it.first<<" : "<<it.second<<" "<<endl;
        }*/
+
+    initialNode.id = nextStateId;
+    nextStateId++;
+
     buildNFATree();
 }
 
@@ -314,10 +318,9 @@ vector<string> NFABuilder::tokenize(string x, unordered_map<string, string> defi
             i++;
             continue;
         }
-        if (x[i] == '\\' && x[i + 1] == 'L') {
-            string temp = x.substr(i, 2);
-            result.push_back(RegularDefinitions::LAMBDA);
-            i += 2;
+        if (x[i] == 'L') {
+            result.push_back(string(1, RegularExpressions::LAMBDA));
+            i += 1;
             continue;
         }
         if (isarithmetic(x[i]) && x[i] != '\\') {
@@ -336,3 +339,6 @@ vector<string> NFABuilder::tokenize(string x, unordered_map<string, string> defi
     return result;
 }
 
+TokenStateNode NFABuilder::getInitialNFANode() {
+    return initialNode;
+}

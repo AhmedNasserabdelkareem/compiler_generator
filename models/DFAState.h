@@ -19,6 +19,8 @@ public:
     bool equals(DFAState *state);
     bool isAcceptance();
 
+    string getToken();
+
 public:
     unordered_map<char, vector<DFAState *>> nextDFAStates;
     vector<TokenStateNode> formingNFAStates;
@@ -26,6 +28,10 @@ public:
 
 private:
     bool markedForConversion = false;
+
+    vector<TokenStateNode> eClosure(TokenStateNode n);
+
+    bool nodeInVector(vector<TokenStateNode> v, TokenStateNode *n);
 };
 
 

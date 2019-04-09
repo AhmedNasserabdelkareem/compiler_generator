@@ -14,12 +14,13 @@ public:
 
     DFAminiState();
 
-    DFAminiState(string name, bool accept, int id);
+    DFAminiState(string name, bool accept, int id, string token);
 
 public:
     int id;
     bool isAccepting;
     string stateName; //Equivalent to the definition name when it's an accepting state
+    string token;
 };
 
 
