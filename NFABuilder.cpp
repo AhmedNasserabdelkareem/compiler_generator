@@ -18,8 +18,7 @@ NFABuilder::NFABuilder(const RegularDefinitions &regularDefinitions, const Regul
            cout << it.first<<" : "<<it.second<<" "<<endl;
        }*/
 
-    initialNode.id = nextStateId;
-    nextStateId++;
+    initialNode.id = nextStateId++;
 
     buildNFATree();
 }
@@ -118,9 +117,7 @@ void NFABuilder::unionOperands() {
 }
 
 void NFABuilder::positiveClosureOperand() {
-    FiniteStateTable operand = operandsStack.top();
-
-    operandsStack.push(operand);
+    operandsStack.push(getClone(operandsStack.top()));
 
     kleeneClosureOperand();
     concatenateOperands();
@@ -337,6 +334,40 @@ vector<string> NFABuilder::tokenize(string x, unordered_map<string, string> defi
         i++;
     }
     return result;
+}
+
+FiniteStateTable NFABuilder::getClone(FiniteStateTable table) {
+
+    FiniteStateTable cloneTable;
+    int numberOfNewStates = table.statesDequeue.size();
+    nextStateId += numberOfNewStates;
+    unordered_map<int, TokenStateNode *> newStates;
+
+    for (auto state:table.statesDequeue) {
+        int stateId = state->id + numberOfNewStates;
+
+        TokenStateNode *nodeToInsert = new TokenStateNode(state->stateName, state->isAccepting);
+        nodeToInsert->id = stateId;
+
+        newStates[stateId] = nodeToInsert;
+
+        cloneTable.statesDequeue.push_back(nodeToInsert);
+    }
+
+    for (auto state:table.statesDequeue) {
+        TokenStateNode *newNode = newStates[state->id + numberOfNewStates];
+
+        for (const auto &transitionPair:state->nextStates) {
+
+            vector<TokenStateNode *> nextStates;
+
+            for (auto statesForChar:transitionPair.second) {
+                newNode->addNextState(transitionPair.first, newStates[statesForChar->id + numberOfNewStates]);
+            }
+        }
+    }
+
+    return cloneTable;
 }
 
 TokenStateNode NFABuilder::getInitialNFANode() {

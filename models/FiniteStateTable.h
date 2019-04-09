@@ -13,6 +13,7 @@ class FiniteStateTable {
 
 public:
     deque<TokenStateNode *> statesDequeue;
+
 };
 
 
