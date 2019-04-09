@@ -6,14 +6,20 @@
 #include "DFABuilder.h"
 #include <models/RegularExpressions.h>
 #include <stack>
+#include <iostream>
 
+using namespace std;
 
 DFABuilder::DFABuilder(TokenStateNode node, set<char> language) : startNFA(node) {
     charactersSet = language;
     counterDFAStates = 0;
+
+    cout << "enter epsilon closure" << endl;
     vector<TokenStateNode> formation = epsilonClosure(startNFA);
     DFAState x(formation, counterDFAStates++);
     this->startingDFA = &x;
+
+    cout << "enter build dfa" << endl;
     buildDFA();
 }
 
@@ -21,17 +27,21 @@ void DFABuilder::buildDFA() {
     deque<DFAState *> *dfaStates = new deque<DFAState *>;
 
     dfaStates->insert(dfaStates->begin(), startingDFA);
+    cout << "enter loop" <<endl;
     while (!dfaStates->empty()) {
         DFAState *t = dfaStates->front();
         dfaStates->pop_front();
         t->markForConversion();
         int testFound = findInVector(t, Dtrans);
-        if(testFound != -1){
+        if (testFound != -1) {
             continue;
         }
         vector<DFAState> v;
         v.push_back(*t);
         for (auto itr = charactersSet.begin(); itr != charactersSet.end(); ++itr) {
+            if(*itr == '\000') {
+                continue;
+            }
             DFAState *u = t->move(*itr, counterDFAStates++);
             //dead state
             if (u->formingNFAStates.size() == 0) {
@@ -42,15 +52,17 @@ void DFABuilder::buildDFA() {
                 continue;
             }
             t->addNextState(*itr, u);
-            u->unMarkForConversion();
-            dfaStates->insert(dfaStates->begin(), u);
-
+            if(!nodeInDequeue(dfaStates, u)){
+                u->unMarkForConversion();
+                dfaStates->insert(dfaStates->begin(), u);
+            }
             //update result dfa
             v.push_back(*u);
         }
         Dtrans.push_back(v);
         v = vector<DFAState>(); //for deallocation
     }
+    cout << "enter normalization" <<endl;
     Dtrans = normalizeDFAStates(Dtrans);
 //    printAcceptance(Dtrans);
 //    printDFAStates(Dtrans);
@@ -87,7 +99,7 @@ DFAState DFABuilder::getDFAInitialNode() {
 
 bool DFABuilder::nodeInVector(vector<TokenStateNode> v, TokenStateNode *n) {
     for (int i = 0; i < v.size(); i++) {
-        if (n == &v[i]) return true;
+        if (n->id == v[i].id) return true;
     }
     return false;
 }
@@ -95,7 +107,7 @@ bool DFABuilder::nodeInVector(vector<TokenStateNode> v, TokenStateNode *n) {
 int DFABuilder::findInVector(DFAState *pState, vector<vector<DFAState> > DFAvector) {
     vector<TokenStateNode> formation = pState->formingNFAStates;
 
-    for (int i = 0; i < DFAvector.size(); i ++) {
+    for (int i = 0; i < DFAvector.size(); i++) {
         DFAState iterator = DFAvector[i][0];
         if (compareVectors(formation, iterator.formingNFAStates)) {
             return DFAvector[i][0].id;
@@ -158,6 +170,15 @@ void DFABuilder::printAcceptance(vector<vector<DFAState>> vector) {
             cout << vector[i][0].id << endl;
         }
     }
+}
+
+bool DFABuilder::nodeInDequeue(deque<DFAState *> *pDeque, DFAState *pState) {
+    for(auto dfaState:*pDeque){
+        if(pState->equals(dfaState)){
+            return true;
+        }
+    }
+    return false;
 }
 
 

@@ -16,28 +16,33 @@ Controller::Controller(string x) {
 void Controller::start() {
     RulesParser parser(rules);
     parser.init();
+    cout << "enter nfa" << endl;
     auto *nfaBuilder = new NFABuilder(*new RegularDefinitions(parser.getExp()),
                                       *new RegularExpressions(parser.getDef()));
 
     TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
 
-    printAcceptingStates(&initialNode, new unordered_set<int>());
+//    printAcceptingStates(&initialNode, new unordered_set<int>());
 //    printNodes(&initialNode, new unordered_set<int>());
 
+    cout << "enter DFA" << endl;
     DFABuilder *dfaBuilder = new DFABuilder(initialNode, nfaBuilder->charactersSet);
     vector<vector<DFAState>> dfa = dfaBuilder->getDFA();
 
+    cout << "enter mini" << endl;
+
     DFAmini *dfaMini = new DFAmini();
 
-    for (int j = 0; j < dfa.size(); ++j) {
-        for (int i = 0; i < dfa[j].size(); ++i) {
-            cout << dfa[j][i].id << " ";
-        }
-        cout << endl;
-    }
+//    for (int j = 0; j < dfa.size(); ++j) {
+//        for (int i = 0; i < dfa[j].size(); ++i) {
+//            cout << dfa[j][i].id << " ";
+//        }
+//        cout << endl;
+//    }
 
     vector<vector<DFAminiState>> minimizedDFA = dfaMini->getMinimizedDFA(dfa);
 
+    cout << "enter tokengenerator" << endl;
     TokenGenerator tokenGenerator = TokenGenerator(minimizedDFA, nfaBuilder->charactersSet);
     /*ifstream program;
     program.open("../input/test.txt");
@@ -47,8 +52,12 @@ void Controller::start() {
     while (getline(program, line)){
        cout<<line;
     }*/
-    dfaMini->printMinimizedStates();
-    string pg = "3 3";
+//    dfaMini->printMinimizedStates();
+    string pg = "int sum , count , pass , mnt; \n"
+                "while (pass != 10)\n"
+                "{\n"
+                "pass = pass + 1 ;\n"
+                "}";
     vector<string> temp = tokenGenerator.generateTokens(pg);
     for (int i = 0; i < temp.size(); ++i) {
         cout << temp[i] << " ";

@@ -5,12 +5,13 @@
 #include <sstream>
 #include <models/DFAState.h>
 #include <models/DFAminiState.h>
+#include <iostream>
 #include "DFAmini.h"
 
 vector<vector<DFAminiState> > DFAmini::getMinimizedDFA(vector<vector<DFAState> > dfa) {
 
-    //sortDFA(&dfa);
-    getZeroEquivalent(dfa);
+         //sortDFA(&dfa);
+         getZeroEquivalent(dfa);
     vector<vector<DFAState> > newStates = states;
     bool stateAdded;
 

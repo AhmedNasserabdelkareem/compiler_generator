@@ -23,10 +23,14 @@ DFAState* DFAState::move(char input, int dfaStateID){
     for(int i = 0; i < formingNFAStates.size(); i++){
         vector<TokenStateNode *> v = formingNFAStates[i].getStatesForCharacter(input);
         for(int j = 0; j < v.size(); j++){
-            formation.push_back(*v[j]);
+            if(!nodeInVector(formation, v[j])) {
+                formation.push_back(*v[j]);
+            }
             vector<TokenStateNode> epsilonStates = eClosure(*v[j]);
             for (int k = 0; k < epsilonStates.size(); k++) {
-                formation.push_back(epsilonStates[k]);
+                if(!nodeInVector(formation, &epsilonStates[k])) {
+                    formation.push_back(epsilonStates[k]);
+                }
             }
         }
     }

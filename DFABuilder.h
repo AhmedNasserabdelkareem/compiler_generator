@@ -38,6 +38,8 @@ private:
     void printDFAStates(vector<vector<DFAState>> vector);
 
     void printAcceptance(vector<vector<DFAState>> vector);
+
+    bool nodeInDequeue(deque<DFAState *> *pDeque, DFAState *pState);
 };
 
 

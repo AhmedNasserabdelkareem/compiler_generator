@@ -25,10 +25,9 @@ public:
     unordered_map<char, vector<DFAState *>> nextDFAStates;
     vector<TokenStateNode> formingNFAStates;
     int id = -1;
-
-private:
     bool markedForConversion = false;
 
+private:
     vector<TokenStateNode> eClosure(TokenStateNode n);
 
     bool nodeInVector(vector<TokenStateNode> v, TokenStateNode *n);

@@ -64,7 +64,7 @@ bool TokenGenerator::getToken(vector<string> &tokens, int lastAcceptingInput, DF
     if (lastAcceptingState != nullptr) {
         tokens.push_back(lastAcceptingState->token);
         //cout<<lastAcceptingState->token;
-        i = lastAcceptingInput;
+        i = lastAcceptingInput + 1;
         lastAcceptingState = nullptr;
         crrentStateId = STARTING_STATE_ID;
         return true;
