@@ -67,6 +67,7 @@ private:
 
     vector<string> tokenize(string x,unordered_map<string,string> definitions, vector<string> result);
 
+    FiniteStateTable getClone(FiniteStateTable table);
 };
 
 

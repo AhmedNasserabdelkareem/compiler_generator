@@ -15,7 +15,7 @@ public:
     Controller(string rules);
     void start();
 
-    void printNodes(TokenStateNode *pNode, unordered_set<int> *visitedStates);
+    static void printNodes(TokenStateNode *pNode, unordered_set<int> *visitedStates);
 
 private:
     string rules;
