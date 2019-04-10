@@ -8,8 +8,10 @@
 
 #include "TokenGenerator.h"
 
-TokenGenerator::TokenGenerator(vector<vector<DFAminiState> > minimizedDfa, set<char> inputs) : minimizedDfa(
-        std::move(minimizedDfa)), inputs(std::move(inputs)) {};
+TokenGenerator::TokenGenerator(vector<vector<DFAminiState>> minimizedDfa, set<char> inputs,
+                               unordered_set<string> punc, unordered_set<string> keywords)
+        : minimizedDfa(
+        std::move(minimizedDfa)), inputs(std::move(inputs)), punc(punc), keywords(keywords) {};
 
 /*vector<string> TokenGenerator::generateTokens(ifstream file) {
     string inputStream((std::istreambuf_iterator<char>(file)),
@@ -20,7 +22,8 @@ TokenGenerator::TokenGenerator(vector<vector<DFAminiState> > minimizedDfa, set<c
 vector<string> TokenGenerator::generateTokens(string inputStream) {
     vector<string> tokens;
 
-    DFAminiState *lastAcceptingState = nullptr, *tempState;
+    DFAminiState idleState = DFAminiState("idle", false, -99, "");
+    DFAminiState lastAcceptingState = idleState, tempState;
     int crrentStateId = STARTING_STATE_ID, inputIndex, lastAcceptingInput = 0;
     char input;
 
@@ -31,27 +34,41 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
                 continue;
             else {
                 char prev = inputStream[i - 1];
-                if (prev == ' ' || prev == '\t' || prev == '\n')
+                if (prev == ' ' || prev == '\t' || prev == '\n' || !isPunc(prev).empty())
                     continue;
-                else if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, crrentStateId, i))//if not => error
+                else if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, idleState, crrentStateId,
+                                   i, inputStream, false))//if not => error
                     return tokens;
             }
+        }
+
+        string punc = isPunc(input);
+        if (!punc.empty()){
+            if (i > 0 && inputStream[i - 1] != ' ' &&  inputStream[i - 1] != '\t' &&  inputStream[i - 1] != '\n') {
+                if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, idleState, crrentStateId,
+                              i, inputStream, true))//if not => error
+                    return tokens;
+            }
+
+            tokens.push_back(punc);
+            continue;
         }
 
         inputIndex = std::distance(inputs.begin(), inputs.find(input));
         if (inputIndex >= inputs.size()) {
             //input dosen't exist
         } else {
-            tempState = &minimizedDfa[crrentStateId][inputIndex + 1];
-            crrentStateId = tempState->id;
-            if (tempState->isAccepting) {
+            tempState = minimizedDfa[crrentStateId][inputIndex];
+            crrentStateId = tempState.id;
+            if (tempState.isAccepting) {
                 lastAcceptingState = tempState;
                 lastAcceptingInput = i;
             }
         }
 
         if (i == inputStream.size() - 1) {
-            if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, crrentStateId, i))//if not => error
+            if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, idleState, crrentStateId, i,
+                          inputStream, false))//if not => error
                 return tokens;
         }
     }
@@ -59,18 +76,55 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
     return tokens;
 }
 
-bool TokenGenerator::getToken(vector<string> &tokens, int lastAcceptingInput, DFAminiState *&lastAcceptingState,
-                              int &crrentStateId, int &i) const {
-    if (lastAcceptingState != nullptr) {
-        tokens.push_back(lastAcceptingState->token);
+bool TokenGenerator::getToken(vector<string> &tokens, int lastAcceptingInput, DFAminiState &lastAcceptingState,
+                              DFAminiState &idleState, int &crrentStateId, int &i, string inputStream, bool endWithPunc) {
+    if (lastAcceptingState.id != idleState.id) {
+        string token = lastAcceptingState.token, temp;
+        temp = isKeyword(i, inputStream, endWithPunc);
+        if (temp.empty())//not keyword
+            tokens.push_back(token);
+        else
+            tokens.push_back(temp);
+
         //cout<<lastAcceptingState->token;
         i = lastAcceptingInput + 1;
-        lastAcceptingState = nullptr;
+        lastAcceptingState = idleState;
         crrentStateId = STARTING_STATE_ID;
         return true;
     } else {
         //ERROR massage
         return false;
     }
+}
+
+string TokenGenerator::isKeyword(int i, string inputStream, bool endWithPunc) {
+    string result = "";
+    int start = 0;
+    if (i != inputStream.size() - 1 || endWithPunc)
+        i--;
+    for (int j = i - 1; j > 0; j--) {
+        if (inputStream[j] == ' ') {
+            start = j;
+            break;
+        }
+    }
+
+    string temp = inputStream.substr(start, i - start + 1);
+    int idIndex = std::distance(keywords.begin(), keywords.find(temp));
+    if (idIndex < keywords.size())
+        result = temp;
+
+    return result;
+
+}
+
+string TokenGenerator::isPunc(char c) {
+    string result = "", temp (1 , c);
+
+    int idIndex = std::distance(punc.begin(), punc.find(temp));
+    if (idIndex < punc.size())
+        result = temp;
+
+    return result;
 }
 

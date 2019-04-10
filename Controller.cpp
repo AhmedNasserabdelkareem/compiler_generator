@@ -42,8 +42,17 @@ void Controller::start() {
 
     vector<vector<DFAminiState>> minimizedDFA = dfaMini->getMinimizedDFA(dfa);
 
+//    dfaMini->printMinimizedStates();
+//    for (int j = 0; j < dfa.size(); ++j) {
+//        for (int i = 0; i < dfa[j].size(); ++i) {
+//            cout << minimizedDFA[j][i].stateName << " ";
+//        }
+//        cout << endl << endl;
+//    }
+
     cout << "enter tokengenerator" << endl;
-    TokenGenerator tokenGenerator = TokenGenerator(minimizedDFA, nfaBuilder->charactersSet);
+    TokenGenerator tokenGenerator = TokenGenerator(minimizedDFA, nfaBuilder->charactersSet, parser.getPunc(),
+                                                   parser.getKeywrds());
     /*ifstream program;
     program.open("../input/test.txt");
     string pg((std::istreambuf_iterator<char>(program)),
@@ -53,14 +62,11 @@ void Controller::start() {
        cout<<line;
     }*/
 //    dfaMini->printMinimizedStates();
-    string pg = "int sum , count , pass , mnt; \n"
-                "while (pass != 10)\n"
-                "{\n"
-                "pass = pass + 1 ;\n"
-                "}";
+//  "int sum9 count 9 , pass , mnt; while (pass != 10) { pass = pass + 1 ; }"
+    string pg = "while ; int, 9 int9 int";
     vector<string> temp = tokenGenerator.generateTokens(pg);
     for (int i = 0; i < temp.size(); ++i) {
-        cout << temp[i] << " ";
+        cout << temp[i] << endl;
     }
 
 }

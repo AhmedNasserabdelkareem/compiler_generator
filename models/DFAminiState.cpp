@@ -4,5 +4,7 @@
 
 #include "DFAminiState.h"
 
+DFAminiState::DFAminiState(){}
+
 DFAminiState::DFAminiState(string name, bool accept, int id, string token) : stateName(name), isAccepting(accept),
                                                                              id(id), token(token) {}

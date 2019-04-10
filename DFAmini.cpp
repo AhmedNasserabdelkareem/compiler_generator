@@ -107,6 +107,7 @@ bool DFAmini::isInSameClass(int stateA, int stateB) {
 vector<vector<DFAminiState> > DFAmini::renameStates(vector<vector<DFAState> > dfa) {
     vector<vector<DFAminiState> > minimized(0, vector<DFAminiState>());
     bool nextInput, added;
+    DFAminiState deadState = DFAminiState("de", false, -1, "");
 
     for (int i = 0; i < dfa.size(); ++i) {
         added = false;
@@ -124,7 +125,10 @@ vector<vector<DFAminiState> > DFAmini::renameStates(vector<vector<DFAState> > df
             nextInput = false;
             for (int j = 0; !nextInput && j < states.size(); ++j) {
                 for (int l = 0; !nextInput && l < states[j].size(); ++l) {
-                    if (dfa[i][k].id == states[j][l].id) {
+                    if (dfa[i][k].id == -1){
+                        minimized[minimized.size() - 1].push_back(deadState);
+                        nextInput = true;
+                    }else if (dfa[i][k].id == states[j][l].id) {
                         minimized[minimized.size() - 1].push_back(
                                 DFAminiState(concatenateName(j), states[j][l].isAcceptance(), j,
                                              states[j][l].getToken()));
