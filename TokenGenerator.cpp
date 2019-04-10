@@ -44,7 +44,8 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
 
         string punc = isPunc(input);
         if (!punc.empty()){
-            if (i > 0 && inputStream[i - 1] != ' ' &&  inputStream[i - 1] != '\t' &&  inputStream[i - 1] != '\n') {
+            if (i > 0 && inputStream[i - 1] != ' ' &&  inputStream[i - 1] != '\t' &&  inputStream[i - 1] != '\n'
+                    && isPunc(inputStream[i - 1]).empty()) {
                 if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, idleState, crrentStateId,
                               i, inputStream, true))//if not => error
                     return tokens;
@@ -102,9 +103,9 @@ string TokenGenerator::isKeyword(int i, string inputStream, bool endWithPunc) {
     int start = 0;
     if (i != inputStream.size() - 1 || endWithPunc)
         i--;
-    for (int j = i - 1; j > 0; j--) {
-        if (inputStream[j] == ' ') {
-            start = j;
+    for (int j = i - 1; j >= 0; j--) {
+        if (inputStream[j] == ' ' || !isPunc(inputStream[j]).empty() || inputStream[j] == ';') {
+            start = j + 1;
             break;
         }
     }
@@ -114,6 +115,10 @@ string TokenGenerator::isKeyword(int i, string inputStream, bool endWithPunc) {
     if (idIndex < keywords.size())
         result = temp;
 
+//    for (auto it = keywords.begin(); it != keywords.end(); ++it) {
+//        cout << *it << " ";
+//    }
+
     return result;
 
 }
@@ -121,8 +126,12 @@ string TokenGenerator::isKeyword(int i, string inputStream, bool endWithPunc) {
 string TokenGenerator::isPunc(char c) {
     string result = "", temp (1 , c);
 
+//    for (auto it = punc.begin(); it != punc.end(); ++it) {
+//        cout << *it << " ";
+//    }
+
     int idIndex = std::distance(punc.begin(), punc.find(temp));
-    if (idIndex < punc.size())
+    if (idIndex < punc.size() || temp == ";")
         result = temp;
 
     return result;

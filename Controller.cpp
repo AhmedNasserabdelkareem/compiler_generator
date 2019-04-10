@@ -52,18 +52,15 @@ void Controller::start() {
 
     cout << "enter tokengenerator" << endl;
     TokenGenerator tokenGenerator = TokenGenerator(minimizedDFA, nfaBuilder->charactersSet, parser.getPunc(),
+
                                                    parser.getKeywrds());
-    /*ifstream program;
+    ifstream program;
     program.open("../input/test.txt");
     string pg((std::istreambuf_iterator<char>(program)),
                        std::istreambuf_iterator<char>());
-    string line;
-    while (getline(program, line)){
-       cout<<line;
-    }*/
-//    dfaMini->printMinimizedStates();
-//  "int sum9 count 9 , pass , mnt; while (pass != 10) { pass = pass + 1 ; }"
-    string pg = "while ; int, 9 int9 int";
+
+    //TODO write into file
+    cout << "Byte code: " << endl;
     vector<string> temp = tokenGenerator.generateTokens(pg);
     for (int i = 0; i < temp.size(); ++i) {
         cout << temp[i] << endl;
