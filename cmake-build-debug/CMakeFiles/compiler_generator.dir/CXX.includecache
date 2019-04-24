@@ -1,0 +1,150 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+.././models/DFAState.h
+TokenStateNode.h
+.././models/TokenStateNode.h
+
+.././models/FiniteStateTable.h
+deque
+-
+TokenStateNode.h
+.././models/TokenStateNode.h
+RegularExpressions.h
+.././models/RegularExpressions.h
+
+.././models/Keywords.h
+unordered_set
+-
+
+.././models/Punctuations.h
+unordered_set
+-
+
+.././models/RegularDefinitions.h
+unordered_map
+-
+vector
+-
+
+.././models/RegularExpressions.h
+unordered_map
+-
+vector
+-
+utils/StringUtils.h
+-
+
+.././models/RulesParser.h
+string
+-
+fstream
+-
+vector
+-
+Punctuations.h
+.././models/Punctuations.h
+Keywords.h
+.././models/Keywords.h
+RegularExpressions.h
+.././models/RegularExpressions.h
+RegularDefinitions.h
+.././models/RegularDefinitions.h
+
+.././models/TokenStateNode.h
+unordered_map
+-
+vector
+-
+
+.././utils/StringUtils.h
+string
+-
+unordered_map
+-
+vector
+-
+sstream
+-
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/Controller.cpp
+models/RulesParser.h
+-
+Controller.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/Controller.h
+NFABuilder.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/NFABuilder.h
+DFABuilder.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/DFABuilder.h
+DFAmini.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/DFAmini.h
+TokenGenerator.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/TokenGenerator.h
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/Controller.h
+iostream
+-
+models/TokenStateNode.h
+-
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/DFABuilder.h
+models/TokenStateNode.h
+-
+models/DFAState.h
+-
+set
+-
+deque
+-
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/DFAmini.h
+vector
+-
+models/TokenStateNode.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/models/TokenStateNode.h
+models/DFAState.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/models/DFAState.h
+models/DFAminiState.h
+E:/CSED 6/compilors/compilorProject/compiler_generator/models/DFAminiState.h
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/NFABuilder.h
+models/RegularExpressions.h
+-
+models/RegularDefinitions.h
+-
+models/Keywords.h
+-
+models/TokenStateNode.h
+-
+models/FiniteStateTable.h
+-
+stack
+-
+set
+-
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/TokenGenerator.h
+vector
+-
+models/DFAminiState.h
+-
+set
+-
+string
+-
+fstream
+-
+streambuf
+-
+unordered_set
+-
+
+E:/CSED 6/compilors/compilorProject/compiler_generator/models/DFAminiState.h
+string
+-
+

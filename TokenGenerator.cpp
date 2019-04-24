@@ -37,8 +37,9 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
                 if (prev == ' ' || prev == '\t' || prev == '\n' || !isPunc(prev).empty())
                     continue;
                 else if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, idleState, crrentStateId,
-                                   i, inputStream, false))//if not => error
-                    return tokens;
+                                   i, inputStream, false)) {//if not => error
+                    //return tokens;
+                }
             }
         }
 
@@ -47,11 +48,14 @@ vector<string> TokenGenerator::generateTokens(string inputStream) {
             if (i > 0 && inputStream[i - 1] != ' ' &&  inputStream[i - 1] != '\t' &&  inputStream[i - 1] != '\n'
                     && isPunc(inputStream[i - 1]).empty()) {
                 if (!getToken(tokens, lastAcceptingInput, lastAcceptingState, idleState, crrentStateId,
-                              i, inputStream, true))//if not => error
-                    return tokens;
+                              i, inputStream, true)) {//if not => error
+                    //return tokens;
+                }
             }
 
             tokens.push_back(punc);
+            cout << punc << endl;
+            crrentStateId = STARTING_STATE_ID;
             continue;
         }
 
@@ -82,10 +86,14 @@ bool TokenGenerator::getToken(vector<string> &tokens, int lastAcceptingInput, DF
     if (lastAcceptingState.id != idleState.id) {
         string token = lastAcceptingState.token, temp;
         temp = isKeyword(i, inputStream, endWithPunc);
-        if (temp.empty())//not keyword
+        if (temp.empty()) {//not keyword
             tokens.push_back(token);
-        else
+            cout << token << endl;
+        }
+        else {
             tokens.push_back(temp);
+            cout << temp << endl;
+        }
 
         //cout<<lastAcceptingState->token;
         i = lastAcceptingInput + 1;
@@ -94,6 +102,15 @@ bool TokenGenerator::getToken(vector<string> &tokens, int lastAcceptingInput, DF
         return true;
     } else {
         //ERROR massage
+        for (int j = i; j < inputStream.size(); j++) {
+            if (inputStream[j] == ' ' || inputStream[j] == '\t' || inputStream[j] == '\n' || !isPunc(inputStream[j]).empty() || inputStream[j] == ';') {
+                i = j;
+                break;
+            }
+        }
+        i = lastAcceptingInput + 1;
+        lastAcceptingState = idleState;
+        crrentStateId = STARTING_STATE_ID;
         return false;
     }
 }
@@ -104,7 +121,7 @@ string TokenGenerator::isKeyword(int i, string inputStream, bool endWithPunc) {
     if (i != inputStream.size() - 1 || endWithPunc)
         i--;
     for (int j = i - 1; j >= 0; j--) {
-        if (inputStream[j] == ' ' || !isPunc(inputStream[j]).empty() || inputStream[j] == ';') {
+        if (inputStream[j] == ' ' || inputStream[j] == '\t' || inputStream[j] == '\n' || !isPunc(inputStream[j]).empty() || inputStream[j] == ';') {
             start = j + 1;
             break;
         }
@@ -117,7 +134,7 @@ string TokenGenerator::isKeyword(int i, string inputStream, bool endWithPunc) {
 
 //    for (auto it = keywords.begin(); it != keywords.end(); ++it) {
 //        cout << *it << " ";
-//    }
+//    }fghjkl;'
 
     return result;
 

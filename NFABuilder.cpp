@@ -327,7 +327,13 @@ vector<string> NFABuilder::tokenize(string x, unordered_map<string, string> defi
                 }
                 i++;
             }
-            result.push_back(temp);
+            for(int i=0;i<temp.size();i++){
+                result.push_back(string(1,temp[i]));
+                if(i!=temp.size()-1){
+                    result.push_back((string(1,RegularDefinitions::CONCATENATION)));
+                }
+
+            }
             temp = "";
             i--;
         }

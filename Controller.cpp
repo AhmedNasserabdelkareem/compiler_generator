@@ -23,7 +23,7 @@ void Controller::start() {
     TokenStateNode initialNode = nfaBuilder->getInitialNFANode();
 
 //    printAcceptingStates(&initialNode, new unordered_set<int>());
-//    printNodes(&initialNode, new unordered_set<int>());
+ //   printNodes(&initialNode, new unordered_set<int>());
 
     cout << "enter DFA" << endl;
     DFABuilder *dfaBuilder = new DFABuilder(initialNode, nfaBuilder->charactersSet);
@@ -42,6 +42,7 @@ void Controller::start() {
 
     vector<vector<DFAminiState>> minimizedDFA = dfaMini->getMinimizedDFA(dfa);
 
+    cout << minimizedDFA.size() << endl;
 //    dfaMini->printMinimizedStates();
 //    for (int j = 0; j < dfa.size(); ++j) {
 //        for (int i = 0; i < dfa[j].size(); ++i) {
@@ -55,16 +56,18 @@ void Controller::start() {
 
                                                    parser.getKeywrds());
     ifstream program;
-    program.open("../input/test.txt");
+    program.open("../input/test_2.txt");
     string pg((std::istreambuf_iterator<char>(program)),
                        std::istreambuf_iterator<char>());
+
+//    cout << endl << pg << endl;
 
     //TODO write into file
     cout << "Byte code: " << endl;
     vector<string> temp = tokenGenerator.generateTokens(pg);
-    for (int i = 0; i < temp.size(); ++i) {
-        cout << temp[i] << endl;
-    }
+//    for (int i = 0; i < temp.size(); ++i) {
+//        cout << temp[i] << endl;
+//    }
 
 }
 
